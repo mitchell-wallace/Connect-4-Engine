@@ -1,0 +1,33 @@
+The engine is called from Coordinator.jar - it's the file that is executed
+    It is run with java -jar connect_4_coordinator.jar
+    Arguments include:
+        (required) e0 <path> where <path> is the directory containing the Interface file which includes the main method of the engine
+        (optional) e1 <path> where <path> is for another engine
+        (optional) time x, where x is the amount of time each engine can use
+        (optional) perft x where x is the depth of perft the engine should use
+
+Coordinator to engine: name
+    respond with enginename-c3293398
+
+Coordinator to engine: isready
+    when engine ready, respond with readyok
+    At this point the engine should really just be initialising - no calculations yet
+
+Coordinator to engine: position startpos <moves>
+    the current order of moves. If I understand correctly, it is the column number (0-6) of each move that's happened so far.
+        i.e. if each move has just been filling out along the bottom, <moves> will be 0123456
+    Followed by isready, respond with readyok
+
+Coordinator to engine: go ftime x stime y
+    Tells engine to start calculating. x is time remaining for the player in milliseconds. y is how long the other player has left.
+    Reply should be bestmove z v, where z is the column number, and v is the value of the evaluation function.
+
+Coordinator to engine: perft x
+    Tells the engine to count how many nodes are in the entire search tree when expanded to depth x from current position
+    it is a performance test
+    Should be separate from the minimax algorithm
+    Responds with perft x y where x is the value it received, and y is the number of nodes searched
+
+Coordinator to engine: quit
+    Tells the engine to quit. reply should be quitting.
+
