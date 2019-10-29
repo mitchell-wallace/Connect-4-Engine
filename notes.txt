@@ -31,3 +31,25 @@ Coordinator to engine: perft x
 Coordinator to engine: quit
     Tells the engine to quit. reply should be quitting.
 
+
+
+========PROGRAM STRUCTURE==========
+
+There should be a Game object which contains all the information relating to a single Game
+    It needs to hold the board, moves (as a string)
+    Or should that just be held in main, with an initialiseGame function??
+
+Board is a 6x7 int array
+    Needs to be initialised to all zeroes
+
+When coordinator sends <moves> to the engine, it should compare <moves> with it's internal moves list, moveslist
+    If <moves> does not contain moveslist as a substring, then we need to rebuild the board
+    Otherwise, process the additional information on the end 
+    ORRRRR we just iterate through <moves>. If the index is less than the length of moveslist, we compare with the the value at that index of moveslist.
+        If it's different to moveslist at any point, then we trigger a function to just rebuild the boardstate from <moves>
+        Also if <moves> is shorter than moveslist, we rebuild the board.
+        If <moves> is just the same as moveslist with extra moves on the end, then we process those moves.
+        Since we have to go through this before we take any move anyway, there's not really a need to add the moves our engine takes to moveslist.
+
+When it's time to find bestmove, we need to run the evaluation function. This should be built from pseudocode / examples in the lecture notes
+    Work on that as we get to it.
