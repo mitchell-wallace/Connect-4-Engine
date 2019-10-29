@@ -23,7 +23,28 @@ public int[] evaluate(Game thisgame) {
     private int longestChain = 0;
     private int longestChainOptions = 0;
     private int score = 0;
+    private int playerNumber = 1;   //update this to be set externally?
 
+    int[][] thisboard = thisgame.getBoardState90;
+    
+    for (int i = 0; i < 7; i++) { //moving across the bottom first
+        int k = 0;
+        if ( thisboard[i][k] == playerNumber ) {
+            //then we want to try each of 8 directions it could be adjacent to another piece
+            //maybe use a helper method to make this bit tidier?
+            
+            // i-1, j-1
+            // i-1, j
+            // i-1, j+1
+            // i, j+1
+            // i+1, j+1
+            // i+1, j
+            // i+1, j-1
+            // i, j-1
+        }
+        // do something to increment k if we have a piece above us
+        // should this be recursive?
+    }
     
 
 }
