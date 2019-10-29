@@ -8,3 +8,9 @@ DONE
 
 ** pseudo for evaluate
 ** methods for main to talk to coordinator
+DONE
+
+** set up for minimax;
+    we need a search tree
+    7 children for each node? (7 possible moves each turn)
+    
