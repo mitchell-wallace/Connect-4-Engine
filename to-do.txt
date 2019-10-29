@@ -1,0 +1,10 @@
+** initialiseBoard
+** updateMovesList
+** bestMove
+    calls evaluate, which will, for now, just return (moveslist.length)+1%7 as position,
+        and 10 as it's evaluated value
+DONE
+
+
+** pseudo for evaluate
+** methods for main to talk to coordinator
