@@ -18,33 +18,55 @@
 // not figuring out what to do!
 
 
-public int[] evaluate(Game thisgame) {
+public int[] evaluate(Game thisgame, int maximisingPlayer) {
 
     private int longestChain = 0;
     private int longestChainOptions = 0;
     private int score = 0;
-    private int playerNumber = 1;   //update this to be set externally?
+    //private int playerNumber = 1;
+    //ignore playerNumber, use maximisingPlayer instead
 
-    int[][] thisboard = thisgame.getBoardState90;
+    int[][] thisboard = thisgame.getBoardState();
     
     for (int i = 0; i < 7; i++) { //moving across the bottom first
-        int k = 0;
-        if ( thisboard[i][k] == playerNumber ) {
+        int j = 0;
+        if ( thisboard[i][j] == playerNumber ) {
+            int[] adjacencies = {0,0,0,0,0,0,0,0}
             //then we want to try each of 8 directions it could be adjacent to another piece
-            //maybe use a helper method to make this bit tidier?
+            // helper method checks i,j bounded, returns 1 if open, 2 if maximising player, 3 if opponent,
+            //      0 if out of bounds
             
-            // i-1, j-1
-            // i-1, j
-            // i-1, j+1
-            // i, j+1
-            // i+1, j+1
-            // i+1, j
-            // i+1, j-1
-            // i, j-1
+            // ACTUALLY we don't care that much about checking all adjacencies. We mostly care about playable ones.
+            // That can be another optimisation for later.
+            
+            adjacencies[0] = this.checkCell(i-1 ,j-1,thisgame,maximisingPlayer);
+            adjacencies[1] = this.checkCell(i-1, j,thisgame,maximisingPlayer);
+            adjacencies[2] = this.checkCell(i-1, j+1,thisgame,maximisingPlayer);
+            adjacencies[3] = this.checkCell(i, j+1,thisgame,maximisingPlayer);
+            adjacencies[4] = this.checkCell(i+1, j+1,thisgame,maximisingPlayer);
+            adjacencies[5] = this.checkCell(i+1, j,thisgame,maximisingPlayer);
+            adjacencies[6] = this.checkCell(i+1, j-1,thisgame,maximisingPlayer);
+            adjacencies[7] = this.checkCell(i, j-1,thisgame,maximisingPlayer);
+
         }
-        // do something to increment k if we have a piece above us
+        // do something to increment j if we have a piece above us
         // should this be recursive?
     }
     
 
+}
+
+private int checkCell(int i, int j, Game thisgame, int maximisingPlayer) {
+    if ( i >= 7 || i < 0 || j >= 6 || j < 0 ) // then out of bounds
+       return 0;
+    else int[][] thisboard = thisgame.getBoardState();
+    if (thisboard[i][j] = 0) {
+        TODOiterate();
+        return 1;
+    }
+    else if (thisboard[i][j] = maximisingPlayer) {
+        TODOpointsIfOpen();
+        return 2;
+    }
+    else return 3;
 }
