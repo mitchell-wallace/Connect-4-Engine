@@ -7,8 +7,8 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
         // TODO:: map to coordinator control flow
-        Game thisgame = new Game();
-        thisgame.initialiseBoard();
+        Game thisGame = new Game();
+        thisGame.initialiseBoard();
 
         // game loop setup
         boolean running = true;
@@ -34,7 +34,7 @@ public class Main {
             }
 
             else if (cinput.contains("position startpos")) {
-                thisgame.updateMovesList(cinput.substring(18));
+                thisGame.updateMovesList(cinput.substring(18));
             }
 
             else if (cinput.contains("go ftime")) {
@@ -46,13 +46,13 @@ public class Main {
                 times[0] = Integer.parseInt(cinput.substring(9,(i-1))); // determine x
                 times[1] = Integer.parseInt(cinput.substring(i+7)); // we know how far after the end of x the start if y is
 
-                int[] thisMove = Engine.bestMove(thisgame);
+                int[] thisMove = Engine.bestMove(thisGame);
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
 
             else if (cinput.contains("perft")) {
                 int x = Integer.parseInt(cinput.substring(6));
-                int[] thisPerft = Engine.perft(thisgame,x);
+                int[] thisPerft = Engine.perft(thisGame,x);
                 System.out.println("bestmove " + thisPerft[0] + " " + thisPerft[1]);
             }
 

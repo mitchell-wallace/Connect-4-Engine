@@ -33,6 +33,11 @@ Coordinator to engine: quit
 
 
 
+HOW do we know if we're player 1 or 2? if we went first or second?
+    I don't think it matters, we just need to compare moves made at odd and even indices of movesList.
+    If the next move is odd, and we have to calculate bestmove, then we count the odd moves as ours, and vice versa
+
+
 ========PROGRAM STRUCTURE==========
 
 There should be a Game object which contains all the information relating to a single Game
@@ -53,3 +58,73 @@ When coordinator sends <moves> to the engine, it should compare <moves> with it'
 
 When it's time to find bestmove, we need to run the evaluation function. This should be built from pseudocode / examples in the lecture notes
     Work on that as we get to it.
+
+
+=======EVALUATION=================
+
+/* basically go through the gameboard and see how many in a row we have at any point?
+** 10 base points for 2 in a row
+**    if can't extend to 4, ignore
+**    for each direction it can be extended to 4 (each side alone + both sides), +2
+**        so really a single 2 in a row will be 12, 14, or 16
+**        bonus points for each extra location of a 2 in a row
+** 100 base points for 3 in a row
+**    if can't extend to 4, ignore
+**    for each option it can be extended to 4 (each side), +20
+**        so really a single 3 in a row will be 140 or 180
+**        bonus points for each extra location of a 3 in a row
+** 1000 base points for 4 in a row
+
+
+
+
+do this a little differently - since we're searching from a single point at a time;
+We order by the number of our pieces in a given neighbourhood from a piece,
+    and then the open positions next to them
+
+Horizontal // Positive // Negative:
+    Single piece:
+    +1, -1, +/-2    >> 5 pts
+    +1, -1, +2, -2  >> 8 pts
+        +1 point for each that is not just open but playable
+    
+    Two pieces:
+    +1, -1, +/-2    >> 50 pts
+    +1, -1, +2, -2  >> 80 pts
+        +15 points for each that is not just open but playable
+    
+    Three pieces:
+    +1, -1, +/-2    >> 500 pts
+    +1, -1, +2, -2  >> 1000 pts
+        +200 points for each that is not just open but playable
+            This means we win next turn. These points will only be given once per double threat,
+                as only the middle piece will meet the criteria.
+            We assign more points to having two threats in one direction because this guarantees
+                we have two threats that don't rely on the same play
+    
+ Vertical:      // With vertical we only count up. It's just easier this way.
+    Single piece:
+    +1              >> 5 pts
+    
+    Two pieces:
+    +1, +2          >> 50 pts
+    
+    Three pieces:
+    +1, +2, +3      >> 400 pts
+    
+ Centralisation:	// Additional points for being towards the middle
+		            as it has more openings
+    i = 0|6	>> pts x 1
+    i = 1|5	>> (pts x 1.1) + 1
+    i = 2|4	>> (pts x 1.2) + 2
+    i = 3	>> (pts x 1.3) + 3
+    
+ 
+
+
+** we also need to deduct points for the opponent's options - but we can work on that later
+**    this would be basically running evaluate again but for the other player
+**
+** remember this is just evaluating a given boardstate
+** not figuring out what to do!
+*/
