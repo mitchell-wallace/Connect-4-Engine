@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cfb2a2-256c-486e-933d-01e4fea30b96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect-4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect-4.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do.txt" beforeDir="false" afterPath="$PROJECT_DIR$/to-do.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +44,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="537">
-                  <caret line="73" column="54" lean-forward="true" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+                <state relative-caret-position="452">
+                  <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
                 </state>
               </provider>
             </entry>
@@ -195,7 +191,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572597363118" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572597524395" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -288,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572594666803</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="i think it's technically progress&#10;&#10;i think">
+      <created>1572597404323</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1572597404323</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView">
@@ -368,7 +371,8 @@
     <MESSAGE value="renamed package" />
     <MESSAGE value="trying to get it talking to coordinator" />
     <MESSAGE value="a bunch of bugfixing that hopefully hasn't made anything worse" />
-    <option name="LAST_COMMIT_MESSAGE" value="a bunch of bugfixing that hopefully hasn't made anything worse" />
+    <MESSAGE value="i think it's technically progress&#10;&#10;i think" />
+    <option name="LAST_COMMIT_MESSAGE" value="i think it's technically progress&#10;&#10;i think" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -407,7 +411,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java</url>
-          <line>100</line>
+          <line>81</line>
           <properties class="com.ThomasTheStankEngine.Game" method="printGame">
             <option name="EMULATED" value="true" />
           </properties>
@@ -485,8 +489,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="73" column="54" lean-forward="true" selection-start-line="73" selection-start-column="54" selection-end-line="73" selection-end-column="54" />
+        <state relative-caret-position="452">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>

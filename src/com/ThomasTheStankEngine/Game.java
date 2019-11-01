@@ -64,25 +64,6 @@ public class Game {
         }
     }
 
-    /*public void performMoveOld(char newMove) {
-        // updates boardState to contain an additional move
-        // performing a move should also add it to movesList
-
-        if ( movesList.length() < 42 ) {
-            movesList = movesList + newMove;
-
-            int i = Character.getNumericValue(newMove);
-
-            for (int j = 0; j < 6; j++) {
-                if (boardState[i][j] == 0) {
-                    boardState[i][j] = (2 - ((movesList.length()) % 2));
-                    break;
-                }
-            }
-        }
-
-    }*/
-
     public void performMove(int newMove) {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
@@ -109,6 +90,27 @@ public class Game {
         System.out.print("\n");
     }
 
+
+    /*
+        public void performMoveOld(char newMove) {
+        // updates boardState to contain an additional move
+        // performing a move should also add it to movesList
+
+        if ( movesList.length() < 42 ) {
+            movesList = movesList + newMove;
+
+            int i = Character.getNumericValue(newMove);
+
+            for (int j = 0; j < 6; j++) {
+                if (boardState[i][j] == 0) {
+                    boardState[i][j] = (2 - ((movesList.length()) % 2));
+                    break;
+                }
+            }
+        }
+
+        }
+    */
 
 
 }
