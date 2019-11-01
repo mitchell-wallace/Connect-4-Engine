@@ -111,6 +111,10 @@ Horizontal // Positive // Negative:
             We assign more points to having two threats in one direction because this guarantees
                 we have two threats that don't rely on the same play
     
+    Four pieces:    >> 1000000    // not using Integer.MAXVALUE so that using *-1 for opposite player works
+                                  // also can keep using += syntax without exceeding max value
+                                  // just reduces risk of breaking things
+    
  Vertical:      // With vertical we only count up. It's just easier this way.
     Single piece:
     +1              >> 5 pts
@@ -120,6 +124,8 @@ Horizontal // Positive // Negative:
     
     Three pieces:
     +1, +2, +3      >> 400 pts
+
+    Four pieces:    >> 1000000
     
  Centralisation:	// Additional points for being towards the middle
 		            as it has more openings
