@@ -25,8 +25,8 @@ public class Game {
         }
     }
 
-    public boolean updateMovesList (String moves) {
-        if (moves.length() < movesList.length()) {
+    public void updateMovesList (String moves) {
+        /*if (moves.length() < movesList.length()) {
             buildBoard(moves);
             return true;}
 
@@ -47,9 +47,10 @@ public class Game {
                 // perform move
                 performMove(moves.charAt(i));
             }
-        }
+        }*/
 
-        return true;
+        buildBoard(moves);
+
     }
 
     public void buildBoard(String moves) {
@@ -59,11 +60,11 @@ public class Game {
         movesList="";
         initialiseBoard();
         for (int i = 0; i < moves.length(); i++) {
-            performMove(moves.charAt(i));
+            performMove(Character.getNumericValue(moves.charAt(i)));
         }
     }
 
-    public void performMove(char newMove) {
+    /*public void performMoveOld(char newMove) {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
@@ -71,6 +72,7 @@ public class Game {
             movesList = movesList + newMove;
 
             int i = Character.getNumericValue(newMove);
+
             for (int j = 0; j < 6; j++) {
                 if (boardState[i][j] == 0) {
                     boardState[i][j] = (2 - ((movesList.length()) % 2));
@@ -79,9 +81,9 @@ public class Game {
             }
         }
 
-    }
+    }*/
 
-    public void performMove2(int newMove) {
+    public void performMove(int newMove) {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
@@ -94,6 +96,17 @@ public class Game {
             }
         }
 
+    }
+
+    public void printGame() {
+        System.out.print("\n");
+        for (int i = 6; i > -1; i-- ) {
+            for (int j = 0; j < 6; j++ ) {
+                System.out.print("\t" + boardState[i][j]);
+            }
+            System.out.print("\n");
+        }
+        System.out.print("\n");
     }
 
 

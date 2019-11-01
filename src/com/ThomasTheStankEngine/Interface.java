@@ -39,8 +39,8 @@ public class Interface {
                 times[1] = Integer.parseInt(cinput.substring(i+7)); // we know how far after the end of x the start if y is
                 */
 
-                thisNode.buildTree(3);
-                int[] thisMove = Minimax.minimaxStart(thisNode,2,true);
+                thisNode.buildTree(6);
+                int[] thisMove = Minimax.minimaxStart(thisNode,4,true);
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
@@ -73,6 +73,10 @@ public class Interface {
 
             else if (cinput.contains("info")) {
                 System.out.println("No info output has been configured for this engine.\n");
+            }
+
+            else if (cinput.contains("printG")) {
+                thisNode.getData().printGame();
             }
 
             else {System.out.println("no input received");}

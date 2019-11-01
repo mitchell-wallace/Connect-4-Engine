@@ -1,5 +1,7 @@
 package com.ThomasTheStankEngine;
 
+import org.jetbrains.annotations.NotNull;
+
 public class Node {
 
     Node(Game game1) {
@@ -43,11 +45,25 @@ public class Node {
     public void buildTree(int depth) {
         if (depth > 0) {
             for (int i = 0; i<7; i++) {
-                children[i] = new Node(data);
-                children[i].getData().performMove2(i);
+                children[i] = new Node();
+                children[i].getData().setMovesList(data.getMovesList());
+                Node.copyData(data,children[i].getData());
+                //System.arraycopy(data.getBoardState(),0,children[i].getData().getBoardState(),0,42);
+                children[i].getData().performMove(i);
                 children[i].buildTree(depth - 1);
             }
         }
+    }
+
+    private static void copyData(@NotNull Game src, Game dst) {   //copies src into dst
+        dst.setMovesList(src.getMovesList());
+        int[][] tempBoard = new int[7][6];
+        for ( int i = 0; i < 7; i++) {
+            for ( int j = 0; j < 6; j++ ) {
+                tempBoard[i][j] = src.getBoardState()[i][j];
+            }
+        }
+        dst.setBoardState(tempBoard);
     }
 
     private int visitTree() {

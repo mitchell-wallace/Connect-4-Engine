@@ -18,3 +18,35 @@ DONE
 ** build score calc for evaluate
 ** set up 2 player calc for evaluate
 ** set up syntax for eval calls in minimax
+DONE
+
+fix eval so we don't get scores of 1 billion for going in the middle
+
+So. Evaluation scores are getting stupid inflated somewhere.
+Somewhere we end up with boardstates of 1010101 along the bottom with a moveslist of 0123456
+    This is in the root node from minimax start.
+    None of the other nodes in the tree have even remotely correct boardstates.
+    Also this is without performMove being executed once.
+
+
+
+public static void arraycopy(Object src, int srcPos, Object dest, int destPos, int length)
+
+
+    src − This is the source array.
+
+    srcPos − This is the starting position in the source array.
+
+    dest − This is the destination array.
+
+    destPos − This is the starting position in the destination data.
+
+    length − This is the number of array elements to be copied.
+
+    System.arraycopy(.....)
+
+Well tree building works now. Boardstates are now correctly 2s and 1s. PerformMove is being performed, I was just checking the wrong one.
+The evaluation function still seems leaky.
+It also doesn't seem to work unless the tree is built with depth one more than minimax.
+Also it's not deciding on very good moves.
+Also position startpos doesn't work.
