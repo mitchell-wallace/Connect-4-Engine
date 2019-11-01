@@ -33,6 +33,12 @@ public class Minimax {
     }
 
     public static int[] minimaxStart(Node node, int depth, boolean maximisingPlayer) {
+
+        if (node.getData().getMovesList().equals("")) {
+            int[] out = {3, 20000};
+            return out;
+        }
+
         int bestIndex = 0;
         int bestValue = 0;
         if (maximisingPlayer) {

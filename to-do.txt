@@ -53,3 +53,6 @@ Also position startpos doesn't work.
 
 
 UPDATE. position startpos works, printG works.
+Now I can judge the evaluation function.
+    It does something at least? player one goes on the far right, player 2 on the far left, but player 2 will block the vertical four in a row
+    I think it skews too heavily towards positions it can play right now, and not enough towards the middle.

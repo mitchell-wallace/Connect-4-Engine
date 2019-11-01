@@ -40,7 +40,7 @@ public class Interface {
                 */
 
                 thisNode.buildTree(6);
-                int[] thisMove = Minimax.minimaxStart(thisNode,4,true);
+                int[] thisMove = Minimax.minimaxStart(thisNode,12,true);
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
@@ -76,6 +76,11 @@ public class Interface {
             }
 
             else if (cinput.contains("prt")) {
+                thisNode.getData().printGame();
+            }
+
+            else if (cinput.contains("mv")) {
+                thisNode.getData().performMove(Character.getNumericValue(cinput.charAt(3)));
                 thisNode.getData().printGame();
             }
 

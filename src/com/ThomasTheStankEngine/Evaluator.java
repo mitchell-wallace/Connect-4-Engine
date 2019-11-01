@@ -9,6 +9,7 @@ public class Evaluator {
     public static int evaluate(Game data) {
         thisGame = data;
 
+
         for (int i = 0; i < 7; i++) { //moving across the bottom first
             for (int j = 0; j < 6; j++) { //moving up each column
                 if ( thisGame.getBoardState()[i][j] != 0) {
@@ -27,12 +28,14 @@ public class Evaluator {
                     checkTemp = 0;
 
                     // Checking for vertical threats
-                    checkTemp += Evaluator.checkCell(i,j+1, false);
-                    checkTemp += Evaluator.checkCell(i,j+2, false);
-                    checkTemp += Evaluator.checkCell(i,j+3, true);
+                    if ( j < 3 ) {
+                        checkTemp += Evaluator.checkCell(i, j + 1, false);
+                        checkTemp += Evaluator.checkCell(i, j + 2, false);
+                        checkTemp += Evaluator.checkCell(i, j + 3, true);
 
-                    cellScore += scoreCell(checkTemp);
-                    checkTemp = 0;
+                        cellScore += scoreCell(checkTemp);
+                        checkTemp = 0;
+                    }
 
                     // Checking for positive diagonal threats
                     checkTemp += Evaluator.checkCell(i-1,j-1, false);
@@ -52,9 +55,9 @@ public class Evaluator {
                     cellScore += scoreCell(checkTemp);
                     checkTemp = 0;        // commented as a reminder in case I want to use it again
 
-                    if ( i == 3) {cellScore = (int) (cellScore * 1.3) + 3;}    // may need a parseInt or something?
-                    else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.2) + 2;}
-                    else if ( i == 1 || i == 5 ) {cellScore = (int) (cellScore * 1.1) + 1;}
+                    if ( i == 3) {cellScore = (int) (cellScore * 2) + 10;}    // may need a parseInt or something?
+                    else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.7) + 7;}
+                    else if ( i == 1 || i == 5 ) {cellScore = (int) (cellScore * 1.4) + 4;}
 
                     // evaluate maximises player 1 by default, as is typical
                     if (currentPlayer == 2) { score -= cellScore; }
@@ -106,27 +109,27 @@ public class Evaluator {
         if ((check%1000) / 100 == 0 ) {    // the centre cell has no 'owned' neighbours
             if (check % 100 >= 30 ) {
                 score += 5;
-                score += score%10;
+                score += score%10;         // add points for currently playable cells
             }
             if (check % 100 >= 40 ) {
-                score += 3;
+                score += 5;                // add points for playable in both directions
             }
         }
 
         else if ((check%1000) / 100 == 1 ) {    // the centre cell has 1 owned neighbour
             if (check % 100 >= 30 ) {
                 score += 50;
-                score += (score%10)*15;
+                score += (score%10)*10;
             }
             if (check % 100 >= 40 ) {
-                score += 30;
+                score += 50;
             }
         }
 
         else if ((check%1000) / 100 == 2 ) {    // the centre cell has 2 owned neighbours
             if (check % 100 >= 30 ) {
                 score += 500;
-                score += (score%10)*300;
+                score += (score%10)*100;
             }
             if (check % 100 >= 40 ) {
                 score += 700;
@@ -135,7 +138,7 @@ public class Evaluator {
 
         else if ((check%1000) / 100 == 3 ) {    // four in a row
             if (check / 1000 == 1) {
-                score += 3000;
+                score += 2600;
             }
         }
 
