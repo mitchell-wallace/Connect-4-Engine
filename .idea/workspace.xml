@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cfb2a2-256c-486e-933d-01e4fea30b96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Connect-4.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Connect-4.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/minimax_sudo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -15,13 +17,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5083943">
+    <splitter split-orientation="horizontal" split-proportion="0.30951357">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
             <entry file="jar://$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/Coordinator.class">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-2806">
+                <state relative-caret-position="-2193">
                   <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
                 </state>
               </provider>
@@ -34,7 +36,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
+                <state relative-caret-position="228">
+                  <caret line="79" selection-start-line="79" selection-end-line="79" />
                   <folding>
                     <element signature="e#5123#5221#0" />
                   </folding>
@@ -42,15 +45,20 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
-              <provider selected="true" editor-type-id="text-editor" />
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="544">
+                  <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
+                </state>
+              </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
+                <state relative-caret-position="544">
+                  <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
                   <folding>
                     <element signature="method#setChildren#0;class#Node#0" />
                   </folding>
@@ -61,17 +69,19 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="34">
-                  <caret line="7" selection-start-line="7" selection-end-line="7" />
+                <state>
+                  <folding>
+                    <element signature="e#0#2172#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="340">
-                  <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+                <state relative-caret-position="278">
+                  <caret line="59" column="54" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="54" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -90,6 +100,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>0123456</find>
+      <find>perform</find>
+      <find>updateMovesList</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -106,11 +123,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Node.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Interface.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Main.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
       </list>
     </option>
   </component>
@@ -171,14 +189,19 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572585962132" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572594632303" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.General" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.ThomasTheStankEngine" />
+      <recent name="com" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Documents\GitHub\Connect-4\src\com\company" />
     </key>
@@ -196,21 +219,15 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="com.company.Main" />
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.ThomasTheStankEngine.Interface" />
       <module name="Connect-4" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Main" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -251,8 +268,24 @@
       <option name="project" value="LOCAL" />
       <updated>1572578600827</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="trying to get it talking to coordinator">
+      <created>1572586120960</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1572586120960</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
@@ -266,15 +299,15 @@
       <window_info id="UI Designer" order="5" />
       <window_info id="Learn" order="6" weight="0.3298887" />
       <window_info id="Favorites" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" weight="0.32946634" />
+      <window_info anchor="bottom" id="Messages" weight="0.32869297" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32946634" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23201856" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.37509668" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.16473317" />
+      <window_info active="true" anchor="bottom" id="TODO" order="6" visible="true" weight="0.32946634" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.21036349" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32869297" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.32946634" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -320,7 +353,110 @@
     <MESSAGE value="peft, bestmove formatted" />
     <MESSAGE value="engine was redundant, updated Main to use a single Node instead of a game" />
     <MESSAGE value="renamed package" />
-    <option name="LAST_COMMIT_MESSAGE" value="renamed package" />
+    <MESSAGE value="trying to get it talking to coordinator" />
+    <option name="LAST_COMMIT_MESSAGE" value="trying to get it talking to coordinator" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>94</line>
+          <properties />
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>25</line>
+          <properties />
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>34</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>42</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>43</line>
+          <properties />
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>51</line>
+          <properties />
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>52</line>
+          <properties />
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>87</line>
+          <properties />
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>89</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>96</line>
+          <properties />
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>99</line>
+          <properties />
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>79</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java</url>
+          <line>53</line>
+          <properties />
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/com/company/minimax_sudo.java">
@@ -337,48 +473,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#5123#5221#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/Coordinator.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2806">
+        <state relative-caret-position="-2193">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
+        <state relative-caret-position="544">
+          <caret line="49" column="9" lean-forward="true" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="method#setChildren#0;class#Node#0" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
+          <folding>
+            <element signature="e#5123#5221#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#2172#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
+        <state relative-caret-position="278">
+          <caret line="59" column="54" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="71" lean-forward="true" selection-start-line="71" selection-end-line="71" />
         </state>
       </provider>
     </entry>

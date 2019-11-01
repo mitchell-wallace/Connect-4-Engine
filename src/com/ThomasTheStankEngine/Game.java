@@ -53,14 +53,13 @@ public class Game {
     }
 
     public void buildBoard(String moves) {
-        // TODO:: this method needs to, upon completion, set movesList = moves
         // It should basically just work out to initialising the game and running
         // performMove for each character in moves
 
         movesList="";
         initialiseBoard();
-        for (int l = 0; l < moves.length(); l++) {
-            performMove(moves.charAt(l));
+        for (int i = 0; i < moves.length(); i++) {
+            performMove(moves.charAt(i));
         }
     }
 
@@ -68,19 +67,21 @@ public class Game {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
-        movesList = movesList + newMove;
+        if ( movesList.length() < 42 ) {
+            movesList = movesList + newMove;
 
-        int i = Character.getNumericValue(newMove);
-        for (int j = 0; j<6; j++) {
-            if (boardState[i][j] == 0) {
-                boardState[i][j] = ((movesList.length())%2)+1;
-                break;
+            int i = Character.getNumericValue(newMove);
+            for (int j = 0; j < 6; j++) {
+                if (boardState[i][j] == 0) {
+                    boardState[i][j] = (2 - ((movesList.length()) % 2));
+                    break;
+                }
             }
         }
 
     }
 
-    public void performMove(int newMove) {
+    public void performMove2(int newMove) {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
@@ -88,7 +89,7 @@ public class Game {
 
         for (int j = 0; j<6; j++) {
             if (boardState[newMove][j] == 0) {
-                boardState[newMove][j] = (movesList.length())%2;
+                boardState[newMove][j] = (2-((movesList.length())%2));
                 break;
             }
         }

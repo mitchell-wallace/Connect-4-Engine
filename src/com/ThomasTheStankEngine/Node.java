@@ -43,10 +43,9 @@ public class Node {
     public void buildTree(int depth) {
         if (depth > 0) {
             for (int i = 0; i<7; i++) {
-                Node tempNode = this;
-                tempNode.getData().performMove(i);
-                children[i] = tempNode;
-                tempNode.buildTree(depth - 1);
+                children[i] = new Node(data);
+                children[i].getData().performMove2(i);
+                children[i].buildTree(depth - 1);
             }
         }
     }

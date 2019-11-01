@@ -1,4 +1,3 @@
-// TODO:: a lot... this is still basically pseudocode
 /*
     
 
@@ -35,7 +34,7 @@ public class Minimax {
 
     public static int[] minimaxStart(Node node, int depth, boolean maximisingPlayer) {
         int bestIndex = 0;
-        int bestValue;
+        int bestValue = 0;
         if (maximisingPlayer) {
             bestValue = Integer.MIN_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {

@@ -50,7 +50,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i+2,j-2, true);
 
                     cellScore += scoreCell(checkTemp);
-                    //checkTemp = 0;        // commented as a reminder in case I want to use it again
+                    checkTemp = 0;        // commented as a reminder in case I want to use it again
 
                     if ( i == 3) {cellScore = (int) (cellScore * 1.3) + 3;}    // may need a parseInt or something?
                     else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.2) + 2;}
@@ -60,7 +60,11 @@ public class Evaluator {
                     if (currentPlayer == 2) { score -= cellScore; }
                     else { score += cellScore; }
                 }
-                if (thisGame.getBoardState()[i][j+1] == 0) {j = 6;} // block moving up column if it's empty above
+                if ( j < 5 ) {
+                    if (thisGame.getBoardState()[i][j + 1] == 0) {
+                        j = 5;  // block moving up column if it's empty above
+                    }
+                }
             }
         }
         return score;
@@ -72,10 +76,14 @@ public class Evaluator {
         // outputs basically four binary values: [outer edge] [this player's piece] [open cell] [playable cell]
         //  as thousands, hundreds, 10s, 1s
 
-        if ( i >= 7 || i < 0 || j >= 6 || j < 0 ) { return 0; } // then out of bounds
+        if ( i >= 7 || i < 0 || j >= 6 || j < 0 ) {
+            return 0;
+        } // then out of bounds
 
         if (thisGame.getBoardState()[i][j] == 0) {
-        if (j==0) {return 11;}   //bottom row; playable
+        if (j==0) {
+            return 11;
+        }   //bottom row; playable
         if (thisGame.getBoardState()[i][j-1] != 0) {
             return 11;   //not bottom row but playable
         }
