@@ -39,8 +39,8 @@ public class Interface {
                 times[1] = Integer.parseInt(cinput.substring(i+7)); // we know how far after the end of x the start if y is
                 */
 
-                thisNode.buildTree(6);
-                int[] thisMove = Minimax.minimaxStart(thisNode,12,true);
+                thisNode.buildTree(7);
+                int[] thisMove = Minimax.minimaxStart(thisNode,6,true);
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
