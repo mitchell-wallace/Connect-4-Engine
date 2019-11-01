@@ -7,13 +7,11 @@ public class Node {
     Node(Game game1) {
         data = game1;
         children = new Node[7];
-        skip = false;
     }
 
     Node() {
         data = new Game();
         children = new Node[7];
-        skip = false;
     }
 
     private Game data;
@@ -22,7 +20,6 @@ public class Node {
     public Game getData() {return data;}
     public Node getChild(int i) {return children[i];}
     public Node[] getChildren() {return children;}
-    public boolean getSkip() {return skip;}
     public void setData(Game data1) {data = data1;}
     public void setChild(int index, Node child) {children[index] = child;}
     public void setChildren (Node[] children1) {    // this is unlikely to be necessary but whatever
