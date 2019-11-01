@@ -5,7 +5,7 @@ package com.company;
 public class Evaluator {
 
     private static Game thisGame = new Game();
-    private static int currentPlayer = 1;   //TODO:: this needs to be updated throughout evaluate
+    private static int currentPlayer = 1;
     private static int score = 0;
 
     public static int evaluate(Game data) {
@@ -13,14 +13,11 @@ public class Evaluator {
 
         for (int i = 0; i < 7; i++) { //moving across the bottom first
             for (int j = 0; j < 6; j++) { //moving up each column
-                if ( thisGame.getBoardState()[i][j] == currentPlayer) { //TODO:: this shouldn't care which player
+                if ( thisGame.getBoardState()[i][j] != 0) {
 
+                    currentPlayer = thisGame.getBoardState()[i][j];
                     int cellScore = 0;
                     int checkTemp = 0;
-
-                    // TODO:: make this consider both players
-                        //      We just add or subtract from score depending on which player it is
-                        //      maxPlyr therefore isn't a parameter
 
                     // Checking for horizontal threats
                     checkTemp += Evaluator.checkCell(i-1,j, false);
@@ -61,7 +58,9 @@ public class Evaluator {
                     else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.2) + 2;}
                     else if ( i == 1 || i == 5 ) {cellScore = (int) (cellScore * 1.1) + 1;}
 
-                    score += cellScore;
+                    // evaluate maximises player 1 by default, as is typical
+                    if (currentPlayer == 2) { score -= cellScore; }
+                    else { score += cellScore; }
                 }
                 if (thisGame.getBoardState()[i][j+1] == 0) {j = 6;} // block moving up column if it's empty above
             }
