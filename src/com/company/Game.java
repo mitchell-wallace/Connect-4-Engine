@@ -73,7 +73,7 @@ public class Game {
         int i = Character.getNumericValue(newMove);
         for (int j = 0; j<6; j++) {
             if (boardState[i][j] == 0) {
-                boardState[i][j] = (movesList.length())%2;
+                boardState[i][j] = ((movesList.length())%2)+1;
                 break;
             }
         }

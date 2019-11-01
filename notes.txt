@@ -69,6 +69,9 @@ HOW do we know if we're player 1 or 2? if we went first or second?
             Eval function shouldn't need to know.
             Eval fn could be easily adjusted to calculate both players and just use one as positive the other as Negative
             So P1 is +ve, P2 is -ve.
+        
+        Player 1 is the player that goes first.
+            We prooooobably need to make sure that it works whether we go first or second
 
 
 /* basically go through the gameboard and see how many in a row we have at any point?
@@ -104,8 +107,8 @@ Horizontal // Positive // Negative:
     
     Three pieces:
     +1, -1, +/-2    >> 500 pts
-    +1, -1, +2, -2  >> 1000 pts
-        +200 points for each that is not just open but playable
+    +1, -1, +2, -2  >> 1200 pts
+        +300 points for each that is not just open but playable
             This means we win next turn. These points will only be given once per double threat,
                 as only the middle piece will meet the criteria.
             We assign more points to having two threats in one direction because this guarantees
@@ -115,17 +118,14 @@ Horizontal // Positive // Negative:
                                   // also can keep using += syntax without exceeding max value
                                   // just reduces risk of breaking things
     
- Vertical:      // With vertical we only count up. It's just easier this way.
-    Single piece:
-    +1              >> 5 pts
-    
-    Two pieces:
-    +1, +2          >> 50 pts
-    
-    Three pieces:
-    +1, +2, +3      >> 400 pts
+ Vertical:      // Basically the same scoring but it can only get the lower tier of points 
+                // as only three cells are checked
 
-    Four pieces:    >> 1000000
+    Four pieces:    >> 3000
+        // A non-vertical four in a row will have a higher score because it can be 'seen' from two places
+            // This is probably okay?
+            // We don't want the 4 score to be /too/ high so that it still values threats,
+            // but obviously it still needs to actually play the winning move when it has the opportunity
     
  Centralisation:	// Additional points for being towards the middle
 		            as it has more openings

@@ -6,8 +6,6 @@ public class Evaluator {
 
     private static Game thisGame = new Game();
     private static int currentPlayer = 1;   //TODO:: this needs to be updated throughout evaluate
-    private static int longestChain = 0;
-    private static int longestChainOptions = 0;
     private static int score = 0;
 
     public static int evaluate(Game data) {
@@ -17,24 +15,12 @@ public class Evaluator {
             for (int j = 0; j < 6; j++) { //moving up each column
                 if ( thisGame.getBoardState()[i][j] == currentPlayer) { //TODO:: this shouldn't care which player
 
-                    // helper method checkCell checks i,j bounded, returns 1 if open, 
-                    //      2 if open and playable,
-                    //      3 if maximising player, 4 if opponent,
-                    //      0 if out of bounds
-
                     int cellScore = 0;
                     int checkTemp = 0;
-                    
-                    // TODO:: make checks below add points as they go
-                    // how do we do this in practice? set four ints?
-                    //      In that case do we want to change the outputs of checkCell to make this easier?
-                    //      i.e. 10 if open, 11 if playable; use >'s to check count, %'s to check playability
-                    //      We don't really care why we can't play in a cell so 0 for OOB and opponent
-                    //      More elegant to look at this way
 
                     // TODO:: make this consider both players
-                    //      We just add or subtract from score depending on which player it is
-                    //      maxPlyr therefore isn't a parameter
+                        //      We just add or subtract from score depending on which player it is
+                        //      maxPlyr therefore isn't a parameter
 
                     // Checking for horizontal threats
                     checkTemp += Evaluator.checkCell(i-1,j, false);
@@ -69,7 +55,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i+2,j-2, true);
 
                     cellScore += scoreCell(checkTemp);
-                    checkTemp = 0;
+                    //checkTemp = 0;        // commented as a reminder in case I want to use it again
 
                     if ( i == 3) {cellScore = (int) (cellScore * 1.3) + 3;}    // may need a parseInt or something?
                     else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.2) + 2;}
@@ -92,13 +78,11 @@ public class Evaluator {
         if ( i >= 7 || i < 0 || j >= 6 || j < 0 ) { return 0; } // then out of bounds
 
         if (thisGame.getBoardState()[i][j] == 0) {
-            if (j==0) {return 11;}   //bottom row; playable
-            if (j>0) {
-                if (thisGame.getBoardState()[i][j-1] != 0) {
-                    return 11;   //not bottom row but playable
-                }
-            }
-            return 10;   //otherwise open
+        if (j==0) {return 11;}   //bottom row; playable
+        if (thisGame.getBoardState()[i][j-1] != 0) {
+            return 11;   //not bottom row but playable
+        }
+        return 10;   //otherwise open
         }
 
         else if (thisGame.getBoardState()[i][j] == currentPlayer) {
@@ -114,7 +98,7 @@ public class Evaluator {
     private static int scoreCell(int check) {
         int score = 0;
 
-        if (check / 100 == 0 ) {    // the centre cell has no 'owned' neighbours
+        if ((check%1000) / 100 == 0 ) {    // the centre cell has no 'owned' neighbours
             if (check % 100 >= 30 ) {
                 score += 5;
                 score += score%10;
@@ -124,7 +108,7 @@ public class Evaluator {
             }
         }
 
-        if (check / 100 == 1 ) {    // the centre cell has 1 owned neighbour
+        else if ((check%1000) / 100 == 1 ) {    // the centre cell has 1 owned neighbour
             if (check % 100 >= 30 ) {
                 score += 50;
                 score += (score%10)*15;
@@ -134,19 +118,29 @@ public class Evaluator {
             }
         }
 
-        if (check / 100 == 2 ) {    // the centre cell has 2 owned neighbours
+        else if ((check%1000) / 100 == 2 ) {    // the centre cell has 2 owned neighbours
             if (check % 100 >= 30 ) {
                 score += 500;
-                score += (score%10)*200;
+                score += (score%10)*300;
             }
             if (check % 100 >= 40 ) {
-                score += 300;
+                score += 700;
             }
         }
 
-        // For checking four in a row, we need to check that it isn't just 4 out of 5
-        // We could set a thousands column flag in checkCell, for marking owned outside cells
+        else if ((check%1000) / 100 == 3 ) {    // four in a row
+            if (check / 1000 == 1) {
+                score += 3000;
+            }
+        }
+
+        // For checking four in a row, we need to check that it isn't just 4 out of 5 in a given direction
+        // We set a thousands column flag in checkCell, for marking owned outside cells
         // and check that the thousands column == 1 for giving a 4 in a row score
+        // A non-vertical four in a row will have a higher score because it can be 'seen' from two places
+        // This is probably okay?
+        // We don't want the 4 score to be /too/ high so that it still values threats,
+        // but obviously it still needs to actually play the winning move when it has the opportunity
 
         return score;
     }
