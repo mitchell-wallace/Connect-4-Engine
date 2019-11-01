@@ -50,3 +50,6 @@ The evaluation function still seems leaky.
 It also doesn't seem to work unless the tree is built with depth one more than minimax.
 Also it's not deciding on very good moves.
 Also position startpos doesn't work.
+
+
+UPDATE. position startpos works, printG works.

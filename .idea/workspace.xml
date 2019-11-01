@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d5cfb2a2-256c-486e-933d-01e4fea30b96" name="Default Changelist" comment="">
+    <list default="true" id="d5cfb2a2-256c-486e-933d-01e4fea30b96" name="Default Changelist" comment="now i can look at the board!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/to-do.txt" beforeDir="false" afterPath="$PROJECT_DIR$/to-do.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -41,11 +43,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="452">
-                  <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+                <state relative-caret-position="605">
+                  <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
                 </state>
               </provider>
             </entry>
@@ -74,11 +76,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="667">
-                  <caret line="59" column="77" lean-forward="true" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
+                <state relative-caret-position="333">
+                  <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -125,8 +127,8 @@
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
       </list>
     </option>
   </component>
@@ -191,7 +193,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572597524395" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572597850909" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -291,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572597404323</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="lil tidyup">
+      <created>1572597536068</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1572597536068</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -372,7 +381,8 @@
     <MESSAGE value="trying to get it talking to coordinator" />
     <MESSAGE value="a bunch of bugfixing that hopefully hasn't made anything worse" />
     <MESSAGE value="i think it's technically progress&#10;&#10;i think" />
-    <option name="LAST_COMMIT_MESSAGE" value="i think it's technically progress&#10;&#10;i think" />
+    <MESSAGE value="lil tidyup" />
+    <option name="LAST_COMMIT_MESSAGE" value="lil tidyup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -477,20 +487,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="667">
-          <caret line="59" column="77" lean-forward="true" selection-start-line="59" selection-start-column="77" selection-end-line="59" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="605">
+          <caret line="83" column="22" selection-start-line="83" selection-start-column="22" selection-end-line="83" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="452">
-          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
+        <state relative-caret-position="333">
+          <caret line="57" column="46" selection-start-line="57" selection-start-column="46" selection-end-line="57" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

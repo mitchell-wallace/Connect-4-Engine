@@ -55,7 +55,7 @@ public class Interface {
                 System.out.println("readyok");
             }
 
-            else if (cinput.contains("position startpos")) {
+            else if (cinput.contains("position")) {
                 if (cinput.length() > 17 )
                     thisNode.getData().updateMovesList(cinput.substring(18));
                 else
@@ -75,7 +75,7 @@ public class Interface {
                 System.out.println("No info output has been configured for this engine.\n");
             }
 
-            else if (cinput.contains("printG")) {
+            else if (cinput.contains("prt")) {
                 thisNode.getData().printGame();
             }
 

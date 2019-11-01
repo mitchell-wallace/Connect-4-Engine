@@ -81,8 +81,8 @@ public class Game {
 
     public void printGame() {
         System.out.print("\n");
-        for (int i = 6; i > -1; i-- ) {
-            for (int j = 0; j < 6; j++ ) {
+        for (int j = 5; j > -1; j--) {
+            for (int i = 0; i < 7; i++) {
                 System.out.print("\t" + boardState[i][j]);
             }
             System.out.print("\n");
