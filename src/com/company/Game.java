@@ -80,6 +80,21 @@ public class Game {
 
     }
 
+    public void performMove(int newMove) {
+        // updates boardState to contain an additional move
+        // performing a move should also add it to movesList
+
+        movesList = movesList + newMove;
+
+        for (int j = 0; j<6; j++) {
+            if (boardState[newMove][j] == 0) {
+                boardState[newMove][j] = (movesList.length())%2;
+                break;
+            }
+        }
+
+    }
+
 
 
 }
