@@ -79,6 +79,11 @@ public class Game {
 
     }
 
+    public boolean nextPlayer() {
+        if (2-((movesList.length())%2) == 1) {return true;}
+        else return false;
+    }
+
     public void printGame() {
         System.out.print("\n");
         for (int j = 5; j > -1; j--) {

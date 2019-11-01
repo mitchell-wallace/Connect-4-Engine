@@ -39,8 +39,8 @@ public class Interface {
                 times[1] = Integer.parseInt(cinput.substring(i+7)); // we know how far after the end of x the start if y is
                 */
 
-                thisNode.buildTree(7);
-                int[] thisMove = Minimax.minimaxStart(thisNode,6,true);
+
+                int[] thisMove = Minimax.minimaxStart(thisNode,4,thisNode.getData().nextPlayer());
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
@@ -80,8 +80,11 @@ public class Interface {
             }
 
             else if (cinput.contains("mv")) {
-                thisNode.getData().performMove(Character.getNumericValue(cinput.charAt(3)));
-                thisNode.getData().printGame();
+                if (cinput.length()<4) {System.out.println("u r dumdum");}
+                else {
+                    thisNode.getData().performMove(Character.getNumericValue(cinput.charAt(3)));
+                    thisNode.getData().printGame();
+                }
             }
 
             else {System.out.println("no input received");}

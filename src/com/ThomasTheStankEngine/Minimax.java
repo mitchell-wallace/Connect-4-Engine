@@ -11,6 +11,7 @@ public class Minimax {
 
     private static int minimax(Node node, int depth, boolean maximisingPlayer) {
         if (depth == 0) {
+            Evaluator.resetScore();
             return Evaluator.evaluate(node.getData());
         }
 
@@ -19,14 +20,18 @@ public class Minimax {
             int value = Integer.MIN_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
                 // if we can do better, then set value to the better evaluation
-                value = Math.max(value, minimax(node.getChild(i), depth - 1, false));
+                if (!node.getChild(i).getSkip()) {  // to skip checking moves in full columns
+                    value = Math.max(value, minimax(node.getChild(i), depth - 1, false));
+                }
             }
             return value;
         } else { // we are trying to minimise
             // set the current evaluation to be as large as possible if we wish tominimise it
             int value = Integer.MAX_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
-                value = Math.min(value, minimax(node.getChild(i), depth - 1, true));
+                if (!node.getChild(i).getSkip()) { // to skip checking moves in full columns
+                    value = Math.min(value, minimax(node.getChild(i), depth - 1, true));
+                }
             }
             return value;
         }
@@ -35,34 +40,38 @@ public class Minimax {
     public static int[] minimaxStart(Node node, int depth, boolean maximisingPlayer) {
 
         if (node.getData().getMovesList().equals("")) {
-            int[] out = {3, 20000};
+            int[] out = {3, 1};
             return out;
         }
+        else {
+            depth -= 1;
+            node.buildTree(depth+1);
 
-        int bestIndex = 0;
-        int bestValue = 0;
-        if (maximisingPlayer) {
-            bestValue = Integer.MIN_VALUE;
-            for (int i = 0; i < node.getChildren().length; i++) {
-                int tmpValue = minimax(node.getChild(i), depth, false);
-                if (tmpValue > bestValue) { // we’re trying to maximise, so if we get abigger value, update
-                    bestValue = tmpValue;
-                    bestIndex = i;
+            int bestIndex = 0;
+            int bestValue = 0;
+            if (maximisingPlayer) {
+                bestValue = Integer.MIN_VALUE;
+                for (int i = 0; i < node.getChildren().length; i++) {
+                    int tmpValue = minimax(node.getChild(i), depth, false);
+                    if (tmpValue > bestValue) { // we’re trying to maximise, so if we get abigger value, update
+                        bestValue = tmpValue;
+                        bestIndex = i;
+                    }
+                }
+            } else { // minimising player
+                bestValue = Integer.MAX_VALUE;
+                for (int i = 0; i < node.getChildren().length; i++) {
+                    int tmpValue = minimax(node.getChild(i), depth, true);
+                    if (tmpValue < bestValue) { // we’re trying to minimise, so if we get asmaller value, update
+                        bestValue = tmpValue;
+                        bestIndex = i;
+                    }
                 }
             }
-        } else { // minimising player
-            bestValue = Integer.MAX_VALUE;
-            for (int i = 0; i < node.getChildren().length; i++) {
-                int tmpValue = minimax(node.getChild(i), depth, true);
-                if (tmpValue < bestValue) { // we’re trying to minimise, so if we get asmaller value, update
-                    bestValue = tmpValue;
-                    bestIndex = i;
-                }
-            }
+
+            int[] out = {bestIndex, bestValue};
+            return out;
         }
-
-        int[] out = {bestIndex, bestValue};
-        return out;
     }
 
 }

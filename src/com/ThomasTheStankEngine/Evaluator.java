@@ -6,8 +6,12 @@ public class Evaluator {
     private static int currentPlayer = 1;
     private static int score = 0;
 
+    public static void resetScore() {score = 0;}
+
 
     public static int evaluate(Game data) {
+
+        score = 0;
 
         thisGame = data;
 
@@ -29,7 +33,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i, j + 2);
                     checkTemp += Evaluator.checkCell(i, j + 3);
 
-                    cellScore += (scoreCell(checkTemp) / 2);
+                    cellScore += (scoreCell(checkTemp));
                     checkTemp = 0;
 
                     checkTemp += Evaluator.checkCell(i + 1, j + 1);
@@ -39,12 +43,14 @@ public class Evaluator {
                     cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
-                    if (currentPlayer == 1) {score += cellScore;}
-                    else {score -= cellScore;}
-
+                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*5);}
+                    else {score -= (cellScore*4);}
+                            //the multiplication is unnecessary
                 }
             }
         }
+
+
 
         for (int i = 6; i > 2; i--) {
             for (int j = 0; j < 3; j++) {
@@ -81,6 +87,46 @@ public class Evaluator {
             }
         }
 
+        for (int i = 0; i < 4; i++) {
+            for (int j = 3; j < 6; j++) {
+                if (thisGame.getBoardState()[i][j] != 0) {
+                    currentPlayer = thisGame.getBoardState()[i][j];
+                    int cellScore = 0;
+                    int checkTemp = 0;
+
+                    checkTemp += Evaluator.checkCell(i + 1, j);
+                    checkTemp += Evaluator.checkCell(i + 2, j);
+                    checkTemp += Evaluator.checkCell(i + 3, j);
+
+                    if (currentPlayer == 1) {score += cellScore;}
+                    else {score -= cellScore;}
+
+                }
+            }
+        }
+
+        for (int i = 6; i >2; i--) {
+            for (int j = 3; j < 6; j++) {
+                if (thisGame.getBoardState()[i][j] != 0) {
+                    currentPlayer = thisGame.getBoardState()[i][j];
+                    int cellScore = 0;
+                    int checkTemp = 0;
+
+                    checkTemp += Evaluator.checkCell(i - 1, j);
+                    checkTemp += Evaluator.checkCell(i - 2, j);
+                    checkTemp += Evaluator.checkCell(i - 3, j);
+
+                    if (currentPlayer == 1) {score += cellScore;}
+                    else {score -= cellScore;}
+
+                }
+            }
+        }
+
+        int sanity = Character.getNumericValue(thisGame.getMovesList().charAt(thisGame.getMovesList().length()-1));
+        sanity = 3-(Math.abs(sanity-3));
+        sanity *= 25;
+
         return score;
     }
 
@@ -102,10 +148,11 @@ public class Evaluator {
 
     private static int scoreCell(int check) {
 
-        if ( check%10 < 3 ) {return 0;}
-        check = (int) Math.pow(check,3);
-
-        return check;
+        if ( check%10 < 3 ) {return -20;}
+        if ( check > 30 ) {return 500;}
+        if ( check > 20 ) {return 100;}
+        if ( check%10 == 3 ) {return 10;}
+        return 0;
     }
 
 
