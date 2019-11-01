@@ -2,6 +2,10 @@ package com.company;
 
 public class Node {
 
+    Node(Game game1) {
+        data = game1;
+    }
+
     private Game data = new Game();
     private Node[] children = new Node[7];
 
@@ -41,9 +45,23 @@ public class Node {
         }
     }
 
-    public void buildTreeStart(Game currentGame, int depth) {
-        data = currentGame;
-        this.buildTree(depth);
+    private int visitTree() {
+        int count = 0;
+        if ( this != null ) {
+            count++;
+            for (int i = 0; i<7; i++) {
+                count += children[i].visitTree();
+            }
+        }
+        return count;
     }
+
+    public int[] perft(int depth) {
+        buildTree(depth);
+        int[] out = {depth,this.visitTree()};
+        return out;
+    }
+
+
 
 }

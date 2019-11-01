@@ -10,7 +10,7 @@ package com.company;
 public class Minimax {
 
 
-    int minimax(Node node, int depth, boolean maximisingPlayer) {
+    private static int minimax(Node node, int depth, boolean maximisingPlayer) {
         if (depth == 0) {
             return Evaluator.evaluate(node.getData());
         }
@@ -33,10 +33,11 @@ public class Minimax {
         }
     }
 
-    int minimaxStart(Node node, int depth, boolean maximisingPlayer) {
+    public static int[] minimaxStart(Node node, int depth, boolean maximisingPlayer) {
         int bestIndex = 0;
+        int bestValue;
         if (maximisingPlayer) {
-            int bestValue = Integer.MIN_VALUE;
+            bestValue = Integer.MIN_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
                 int tmpValue = minimax(node.getChild(i), depth, false);
                 if (tmpValue > bestValue) { // we’re trying to maximise, so if we get abigger value, update
@@ -45,7 +46,7 @@ public class Minimax {
                 }
             }
         } else { // minimising player
-            int bestValue = Integer.MAX_VALUE;
+            bestValue = Integer.MAX_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
                 int tmpValue = minimax(node.getChild(i), depth, true);
                 if (tmpValue < bestValue) { // we’re trying to minimise, so if we get asmaller value, update
@@ -55,7 +56,8 @@ public class Minimax {
             }
         }
 
-        return bestIndex;
+        int[] out = {bestIndex, bestValue};
+        return out;
     }
 
 }
