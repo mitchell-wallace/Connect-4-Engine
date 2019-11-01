@@ -4,10 +4,16 @@ public class Node {
 
     Node(Game game1) {
         data = game1;
+        children = new Node[7];
     }
 
-    private Game data = new Game();
-    private Node[] children = new Node[7];
+    Node() {
+        data = new Game();
+        children = new Node[7];
+    }
+
+    private Game data;
+    private Node[] children;
 
     public Game getData() {return data;}
     public Node getChild(int i) {return children[i];}
