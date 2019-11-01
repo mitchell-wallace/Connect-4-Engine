@@ -43,8 +43,8 @@ public class Evaluator {
                     cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
-                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*3);}
-                    else {score -= (cellScore*2);}
+                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*4);}
+                    else {score -= (cellScore*3);}
                             //the multiplication is unnecessary?
                 }
             }
@@ -80,8 +80,8 @@ public class Evaluator {
                     cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
-                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*3);}
-                    else {score -= (cellScore*2);}
+                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*4);}
+                    else {score -= (cellScore*3);}
 
                 }
             }
@@ -98,8 +98,8 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i + 2, j);
                     checkTemp += Evaluator.checkCell(i + 3, j);
 
-                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*3);}
-                    else {score -= (cellScore*2);}
+                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore);}
+                    else {score -= (cellScore);}
 
                 }
             }
@@ -116,8 +116,8 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i - 2, j);
                     checkTemp += Evaluator.checkCell(i - 3, j);
 
-                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore*3);}
-                    else {score -= (cellScore*2);}
+                    if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore);}
+                    else {score -= (cellScore);}
 
                 }
             }
