@@ -1,5 +1,6 @@
 package com.ThomasTheStankEngine;
-import java.util.*;
+import java.util.Scanner;
+import java.io.*;
 
 public class Interface {
 
@@ -8,13 +9,19 @@ public class Interface {
 
         // game loop setup
         boolean running = true;
-        Scanner sc = new Scanner(System.in);
+        //Scanner sc = new Scanner(System.in);
+        InputStreamReader isr=new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(isr);
 
         // game loop
         while (running) {
-            String cinput = sc.nextLine();
+            //String cinput = sc.nextLine();
+            try {
+                String cinput = br.readLine();
 
-            if (cinput.equals("quit")) {
+            //System.out.println(cinput);
+
+            if (cinput.contains("quit")) {
                 System.out.println("quitting");
                 running = false;
             }
@@ -36,11 +43,11 @@ public class Interface {
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
 
-            else if (cinput.equals("name")) {
+            else if (cinput.contains("name")) {
                 System.out.println("engine_name");
             }
 
-            else if (cinput.equals("isready")) {
+            else if (cinput.contains("isready")) {
                 thisNode.buildTree(6);
                 System.out.println("readyok");
             }
@@ -59,6 +66,8 @@ public class Interface {
             else if (cinput.contains("info")) {
                 System.out.print("No info output has been configured for this engine.\n");
             }
+
+            } catch (IOException e) {System.out.println("An error occurred");}
         }
     }
 }
