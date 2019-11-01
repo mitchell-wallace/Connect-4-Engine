@@ -12,7 +12,7 @@ public class Minimax {
 
     int minimax(Node node, int depth, boolean maximisingPlayer) {
         if (depth == 0) {
-            return evaluationFunction(node.getData());
+            return Evaluator.evaluate(node.getData());
         }
 
         if (maximisingPlayer) {

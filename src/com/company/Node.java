@@ -38,8 +38,7 @@ public class Node {
                 children[i] = tempNode;
                 tempNode.buildTree(depth - 1);
             }
-        } else return;
-
+        }
     }
 
     public void buildTreeStart(Game currentGame, int depth) {
