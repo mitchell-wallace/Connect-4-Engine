@@ -31,7 +31,6 @@ public class Node {
     }
 
     public void buildTree(int depth) {
-        //data = currentGame;
         if (depth > 0) {
             for (int i = 0; i<7; i++) {
                 Node tempNode = this;

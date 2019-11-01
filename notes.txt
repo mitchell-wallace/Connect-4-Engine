@@ -64,6 +64,13 @@ HOW do we know if we're player 1 or 2? if we went first or second?
 
 =======EVALUATION=================
 
+        >> MAXIMISING PLAYER refers to whether we want to maximise or minimise the result of the eval fn.
+            Minimax cares about it for it's structure.
+            Eval function shouldn't need to know.
+            Eval fn could be easily adjusted to calculate both players and just use one as positive the other as Negative
+            So P1 is +ve, P2 is -ve.
+
+
 /* basically go through the gameboard and see how many in a row we have at any point?
 ** 10 base points for 2 in a row
 **    if can't extend to 4, ignore

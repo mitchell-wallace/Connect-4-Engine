@@ -13,4 +13,8 @@ DONE
 ** set up for minimax;
     we need a search tree
     7 children for each node? (7 possible moves each turn)
+DONE
     
+** build score calc for evaluate
+** set up 2 player calc for evaluate
+** set up syntax for eval calls in minimax
