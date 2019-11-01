@@ -4,13 +4,13 @@ package com.company;
 
 public class Evaluator {
 
-    private Game thisGame = new Game();
-    private int maximisingPlayer;
-    private int longestChain = 0;
-    private int longestChainOptions = 0;
-    private int score = 0;
+    private static Game thisGame = new Game();
+    private static int maximisingPlayer = 1;   //TODO:: this needs to be updated throughout evaluate
+    private static int longestChain = 0;
+    private static int longestChainOptions = 0;
+    private static int score = 0;
 
-    public int evaluate(Game data) {
+    public static int evaluate(Game data) {
         thisGame = data;
 
         for (int i = 0; i < 7; i++) { //moving across the bottom first
@@ -36,26 +36,26 @@ public class Evaluator {
                     //      maxPlyr therefore isn't a parameter
 
                     // Checking for horizontal threats
-                    this.checkCell(i-1,j);
-                    this.checkCell(i+1,j);
-                    this.checkCell(i-2,j);
-                    this.checkCell(i+2,j);
+                    Evaluator.checkCell(i-1,j);
+                    Evaluator.checkCell(i+1,j);
+                    Evaluator.checkCell(i-2,j);
+                    Evaluator.checkCell(i+2,j);
 
                     // Checking for vertical threats
-                    this.checkCell(i,j+1);
-                    this.checkCell(i,j+3);
+                    Evaluator.checkCell(i,j+1);
+                    Evaluator.checkCell(i,j+3);
 
                     // Checking for positive diagonal threats
-                    this.checkCell(i-1,j-1);
-                    this.checkCell(i+1,j+1);
-                    this.checkCell(i-2,j-2);
-                    this.checkCell(i+2,j+2);
+                    Evaluator.checkCell(i-1,j-1);
+                    Evaluator.checkCell(i+1,j+1);
+                    Evaluator.checkCell(i-2,j-2);
+                    Evaluator.checkCell(i+2,j+2);
 
                     // Checking for negative diagonal threats
-                    this.checkCell(i-1,j+1);
-                    this.checkCell(i+1,j-1);
-                    this.checkCell(i-2,j+2);
-                    this.checkCell(i+2,j-2);
+                    Evaluator.checkCell(i-1,j+1);
+                    Evaluator.checkCell(i+1,j-1);
+                    Evaluator.checkCell(i-2,j+2);
+                    Evaluator.checkCell(i+2,j-2);
 
                     if ( i == 3) {cellScore = (int) (cellScore * 1.3) + 3;}    // may need a parseInt or something?
                     else if ( i == 2 || i == 4 ) {cellScore = (int) (cellScore * 1.2) + 2;}
@@ -70,7 +70,7 @@ public class Evaluator {
 
     }
 
-    private int checkCell(int i, int j) {
+    private static int checkCell(int i, int j) {
 
         if ( i >= 7 || i < 0 || j >= 6 || j < 0 ) { return 0; } // then out of bounds
 
