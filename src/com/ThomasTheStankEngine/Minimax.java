@@ -5,7 +5,7 @@
 
  */
 
-package com.company;
+package com.ThomasTheStankEngine;
 
 public class Minimax {
 
