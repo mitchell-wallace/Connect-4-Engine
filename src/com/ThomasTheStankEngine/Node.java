@@ -18,13 +18,11 @@ public class Node {
 
     private Game data;
     private Node[] children;
-    private boolean skip;
 
     public Game getData() {return data;}
     public Node getChild(int i) {return children[i];}
     public Node[] getChildren() {return children;}
     public boolean getSkip() {return skip;}
-
     public void setData(Game data1) {data = data1;}
     public void setChild(int index, Node child) {children[index] = child;}
     public void setChildren (Node[] children1) {    // this is unlikely to be necessary but whatever
@@ -45,7 +43,6 @@ public class Node {
             }
         }
     }
-    public void setSkip(boolean s) {skip = s;}
 
     public void buildTree(int depth) {
         if (depth > 0) {
@@ -54,9 +51,7 @@ public class Node {
                 children[i].getData().setMovesList(data.getMovesList());
                 Node.copyData(data,children[i].getData());
                 //System.arraycopy(data.getBoardState(),0,children[i].getData().getBoardState(),0,42);
-                if (children[i].getData().getBoardState()[i][5]!=0) {
-                    children[i].getData().performMove(i);
-                } else skip = true;
+                children[i].getData().performMove(i);
                 children[i].buildTree(depth - 1);
             }
         }

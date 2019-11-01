@@ -20,18 +20,14 @@ public class Minimax {
             int value = Integer.MIN_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
                 // if we can do better, then set value to the better evaluation
-                if (!node.getChild(i).getSkip()) {  // to skip checking moves in full columns
-                    value = Math.max(value, minimax(node.getChild(i), depth - 1, false));
-                }
+                value = Math.max(value, minimax(node.getChild(i), depth - 1, false));
             }
             return value;
         } else { // we are trying to minimise
             // set the current evaluation to be as large as possible if we wish tominimise it
             int value = Integer.MAX_VALUE;
             for (int i = 0; i < node.getChildren().length; i++) {
-                if (!node.getChild(i).getSkip()) { // to skip checking moves in full columns
-                    value = Math.min(value, minimax(node.getChild(i), depth - 1, true));
-                }
+                value = Math.min(value, minimax(node.getChild(i), depth - 1, true));
             }
             return value;
         }
