@@ -1,7 +1,5 @@
 package com.ThomasTheStankEngine;
 
-import org.jetbrains.annotations.NotNull;
-
 public class Evaluator {
 
     private static Game thisGame = new Game();
@@ -21,51 +19,50 @@ public class Evaluator {
             if (thisGame.getBoardState()[i][0]!=0) {
                 for (int j = 0; j < 6; j++) {
                     // Checking for horizontal threats
-                    int[] checkTemp = {0,0,0};
-                    int[] checkReset = {0,0,0};
+                    int checkTemp = 0;
                     int cellScore = 0;
 
                     if (i < 4) {
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 1, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 2, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 3, j));
+                        checkTemp += Evaluator.checkCell(i, j);
+                        checkTemp += Evaluator.checkCell(i + 1, j);
+                        checkTemp += Evaluator.checkCell(i + 2, j);
+                        checkTemp += Evaluator.checkCell(i + 3, j);
 
-                        cellScore += calcScore(checkTemp);
-                        checkTemp = checkReset;
+                        cellScore += scoreCell(checkTemp);
+                        checkTemp = 0;
                     }
 
                     // Checking for vertical threats
                     if (j < 3) {
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j + 1));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j + 2));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j + 3));
+                        checkTemp += Evaluator.checkCell(i, j);
+                        checkTemp += Evaluator.checkCell(i, j + 1);
+                        checkTemp += Evaluator.checkCell(i, j + 2);
+                        checkTemp += Evaluator.checkCell(i, j + 3);
 
-                        cellScore += calcScore(checkTemp);
-                        checkTemp = checkReset;
+                        cellScore += scoreCell(checkTemp);
+                        checkTemp = 0;
                     }
 
-                    // Checking for positive diagonal threats
                     if (i < 4 && j < 3) {
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 1, j + 1));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 2, j + 2));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i + 3, j + 3));
+                        // Checking for positive diagonal threats
+                        checkTemp += Evaluator.checkCell(i, j);
+                        checkTemp += Evaluator.checkCell(i + 1, j + 1);
+                        checkTemp += Evaluator.checkCell(i + 2, j + 2);
+                        checkTemp += Evaluator.checkCell(i + 3, j + 3);
 
-                        cellScore += calcScore(checkTemp);
-                        checkTemp = checkReset;
+                        cellScore += scoreCell(checkTemp);
+                        checkTemp = 0;
                     }
 
-                    // Checking for negative diagonal threats
                     if (i > 2 && j < 3) {
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i, j));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i - 1, j + 1));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i - 2, j + 2));
-                        checkTemp = Evaluator.arrayAdd(checkTemp,Evaluator.checkCell(i - 3, j + 3));
+                        // Checking for negative diagonal threats
+                        checkTemp += Evaluator.checkCell(i, j);
+                        checkTemp += Evaluator.checkCell(i - 1, j + 1);
+                        checkTemp += Evaluator.checkCell(i - 2, j + 2);
+                        checkTemp += Evaluator.checkCell(i - 3, j + 3);
 
-                        cellScore += calcScore(checkTemp);
-                        checkTemp = checkReset;
+                        cellScore += scoreCell(checkTemp);
+                        checkTemp = 0;
                     }
 
                 /*if (thisGame.nextPlayer() && currentPlayer == 1) {score += (cellScore);}
@@ -88,85 +85,52 @@ public class Evaluator {
         return score;
     }
 
-    private static int[] checkCell(int i, int j) {
-        int[] out = {0,0,0};
-        // P1 piece, P2 piece, playable
-
-        if (j > 0) {
-            if (thisGame.getBoardState()[i][j-1] != 0) {
-                out[2] = 1;  // if the cell below has been played, this cell is playable
-            }
-        }
-        else if (j == 0 && thisGame.getBoardState()[i][j] == 0) {
-            out[2] = 1;
-        }
-
+    private static int checkCell(int i, int j) {
         switch (thisGame.getBoardState()[i][j]) {
             case 0: //open
-                break;
+                return 0;
             case 1: //player1
-                out[0] =  1;
+                return 1;
             case 2: //player2
-                out[1] =  1;
+                return 10;
             default:
-                break;
+                return 0;
         }
-        return out;
     }
 
-    private static int[] arrayAdd(@NotNull int[] cTemp, @NotNull int[] cCell) {  // for arrays size 3
-        for (int i = 0; i < 3; i ++) {cTemp[i] = cCell[i];}
-        return cTemp;
-    }
+    private static int scoreCell(int check) {
 
-    private static int calcScore(int[] check) {
-
-        if (check[0] == 0 && check[1] == 0) return 0;   // neutral state
-        else if (check[0] > 0 && check[1] == 0) {    // p1 opportunity
-            int out = 0;
-            switch (check[0]) {
+        if (check == 0) return 0;   // neutral state
+        if (check%10 > 0 && check/10 == 0) {    // p1 opportunity
+            switch (check%10) {
                 case 1:
-                    out+= 10;
-                    out+=(check[2]*2);
-                    return out;
+                    return 10;
                 case 2:
-                    out+= 100;
-                    out+=(check[2]*20);
-                    return out;
+                    return 100;
                 case 3:
-                    out+= 1000;
-                    out+=(check[2]*200);
-                    return out;
+                    return 1000;
                 case 4:
-                    out+= 10000;
-                    return out;
+                    return 10000;
                 default:
                     return 0;
             }
         }
-        else if (check[1]> 0 && check[0] == 0) {    // p2 opportunity
-            int out = 0;
-            switch (check[1]) {
+        if (check/10 > 0 && check%10 == 0) {    // p2 opportunity
+            switch (check/10) {
                 case 1:
-                    out-= 10;
-                    out-=(check[2]*2);
-                    return out;
+                    return -10;
                 case 2:
-                    out-= 100;
-                    out-=(check[2]*20);
-                    return out;
+                    return -100;
                 case 3:
-                    out-= 1000;
-                    out-=(check[2]*200);
-                    return out;
+                    return -1000;
                 case 4:
-                    out-= 10000;
-                    return out;
+                    return -10000;
                 default:
                     return 0;
             }
         }
-        else return 0;   // no player opportunity
+
+        return 0;   // no player opportunity
     }
 
 
@@ -204,7 +168,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i-2,j, true);
                     checkTemp += Evaluator.checkCell(i+2,j, true);
 
-                    cellScore += calcScore(checkTemp);
+                    cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
                     // Checking for vertical threats
@@ -213,7 +177,7 @@ public class Evaluator {
                         checkTemp += Evaluator.checkCell(i, j + 2, false);
                         checkTemp += Evaluator.checkCell(i, j + 3, true);
 
-                        cellScore += calcScore(checkTemp);
+                        cellScore += scoreCell(checkTemp);
                         checkTemp = 0;
                     }
 
@@ -223,7 +187,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i-2,j-2, true);
                     checkTemp += Evaluator.checkCell(i+2,j+2, true);
 
-                    cellScore += calcScore(checkTemp);
+                    cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
                     // Checking for negative diagonal threats
@@ -232,7 +196,7 @@ public class Evaluator {
                     checkTemp += Evaluator.checkCell(i-2,j+2, true);
                     checkTemp += Evaluator.checkCell(i+2,j-2, true);
 
-                    cellScore += calcScore(checkTemp);
+                    cellScore += scoreCell(checkTemp);
                     checkTemp = 0;
 
                     if ( i == 3) {cellScore = (int) (cellScore * 2) + 10;}    // may need a parseInt or something?
@@ -254,7 +218,7 @@ public class Evaluator {
 
     }*/
 
-    /*private static int calcScore(int check) {
+    /*private static int scoreCell(int check) {
         int score = 0;
 
         if ((check%1000) / 100 == 0 ) {    // the centre cell has no 'owned' neighbours
