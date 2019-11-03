@@ -87,3 +87,7 @@ Things to fix:
 
     Evaluation function should forget the currentPlayer bullcrap. We don't care.
         checkCell and scoreCell should be positive if it's good for player 1, negative if it's good for player 2
+    
+    We also need to assign value to /playable/ and open cells - but one thing at a time.
+        Ok it seems to be otherwise working (!!!!) so yeah we can get to this now
+        
