@@ -109,7 +109,7 @@ public class Node {
         else {
             perftCount++;
             for (int i = 0; i < 7; i++) {
-                this.children[i] = new Node();
+				this.children[i] = new Node();
                 Node.copyData(this.getData(),this.children[i].getData());
                 if (this.children[i].getData().performMove(i))
                     this.perftIterate(depth-1);
