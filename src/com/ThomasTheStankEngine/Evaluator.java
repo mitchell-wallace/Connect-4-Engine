@@ -127,15 +127,15 @@ public class Evaluator {
             switch (check[0]) {
                 case 1:
                     out+= 10;
-                    out+=(check[2]*2);
+                    out+=(check[2]);
                     return out;
                 case 2:
                     out+= 100;
-                    out+=(check[2]*20);
+                    out+=(check[2]*10);
                     return out;
                 case 3:
                     out+= 1000;
-                    out+=(check[2]*200);
+                    out+=(check[2]*100);
                     return out;
                 case 4:
                     out+= 10000;
@@ -149,15 +149,15 @@ public class Evaluator {
             switch (check[1]) {
                 case 1:
                     out-= 10;
-                    out-=(check[2]*2);
+                    out-=(check[2]);
                     return out;
                 case 2:
                     out-= 100;
-                    out-=(check[2]*20);
+                    out-=(check[2]*10);
                     return out;
                 case 3:
                     out-= 1000;
-                    out-=(check[2]*200);
+                    out-=(check[2]*100);
                     return out;
                 case 4:
                     out-= 10000;
