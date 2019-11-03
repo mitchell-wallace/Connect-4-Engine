@@ -3,10 +3,16 @@
   <component name="ChangeListManager">
     <list default="true" id="d5cfb2a2-256c-486e-933d-01e4fea30b96" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/to-do.txt" beforeDir="false" afterPath="$PROJECT_DIR$/to-do.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -22,7 +28,7 @@
           <file pinned="false" current-in-tab="true">
             <entry file="jar://$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/Coordinator.class">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
+                <state relative-caret-position="68">
                   <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
                 </state>
               </provider>
@@ -32,11 +38,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
+                <state relative-caret-position="731">
+                  <caret line="61" column="71" lean-forward="true" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
                 </state>
               </provider>
             </entry>
@@ -44,8 +50,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1479">
-                  <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+                <state relative-caret-position="1054">
+                  <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
                 </state>
               </provider>
             </entry>
@@ -53,8 +59,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="595">
-                  <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+                <state relative-caret-position="510">
+                  <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
                   <folding>
                     <element signature="method#setChildren#0;class#Node#0" />
                   </folding>
@@ -62,11 +68,14 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="579">
-                  <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+                <state relative-caret-position="748">
+                  <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
+                  <folding>
+                    <element signature="e#0#2838#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -74,8 +83,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="290">
-                  <caret line="42" selection-start-line="42" selection-end-line="42" />
+                <state relative-caret-position="-204">
+                  <caret column="91" selection-start-column="91" selection-end-column="91" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -100,6 +109,8 @@
       <find>updateMovesList</find>
       <find>0123456</find>
       <find>moveslist</find>
+      <find>system.out</find>
+      <find>notnull</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,17 +130,17 @@
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/Interface.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Main.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="514" />
-    <option name="y" value="-22" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1348" />
     <option name="height" value="1417" />
   </component>
@@ -188,7 +199,7 @@
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572608428548" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1572763046498" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -365,6 +376,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1426" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.07710652" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -376,14 +388,14 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23201856" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2892498" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23201856" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.2892498" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32946634" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.21036349" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" weight="0.32869297" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32946634" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32869297" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32869297" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -442,18 +454,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="sanity no longer required" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java</url>
-          <line>55</line>
-          <properties class="com.ThomasTheStankEngine.Game" method="buildBoard">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
         <watch expression="node.children" />
@@ -465,15 +465,25 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Engine.java" />
     <entry file="jar://$PROJECT_DIR$/src/com/connect_4_coordinator.jar!/Coordinator.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="68">
           <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <caret column="91" selection-start-column="91" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+        <state relative-caret-position="510">
+          <caret line="47" column="57" selection-start-line="47" selection-start-column="57" selection-end-line="47" selection-end-column="57" />
           <folding>
             <element signature="method#setChildren#0;class#Node#0" />
           </folding>
@@ -482,32 +492,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
+        <state relative-caret-position="1054">
+          <caret line="62" column="80" selection-start-line="62" selection-start-column="80" selection-end-line="62" selection-end-column="80" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        <state relative-caret-position="748">
+          <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#0#2838#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="579">
-          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
+        <state relative-caret-position="731">
+          <caret line="61" column="71" lean-forward="true" selection-start-line="61" selection-start-column="71" selection-end-line="61" selection-end-column="71" />
         </state>
       </provider>
     </entry>

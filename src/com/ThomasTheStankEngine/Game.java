@@ -1,4 +1,4 @@
-package com.ThomasTheStankEngine;
+//package com.ThomasTheStankEngine;
 
 public class Game {
 
@@ -26,34 +26,7 @@ public class Game {
     }
 
     public void updateMovesList (String moves) {
-        /*if (moves.length() < movesList.length()) {
-            buildBoard(moves);
-            return true;}
 
-        if (moves.equals(movesList)) {return true;}
-
-        for (int i=0; i<moves.length(); i++) {
-            if ((i < movesList.length()) && (!(moves.charAt(i)==movesList.charAt(i)))) {
-                // if moves, as received from the coordinator, differs from the stored movesList
-                // at any position, the board needs to be rebuilt and the loop can be broken
-                buildBoard(moves);
-                return true;
-            }
-            if (i > movesList.length()) {
-                // if moves, as received from the coordinator, contains all of movesList plus some
-                // extra characters, it simply means it contains new moves, from which the boardstate
-                // needs to be updated
-
-                // perform move
-                performMove(moves.charAt(i));
-            }
-        }*/
-
-        buildBoard(moves);
-
-    }
-
-    public void buildBoard(String moves) {
         // It should basically just work out to initialising the game and running
         // performMove for each character in moves
 
@@ -68,7 +41,7 @@ public class Game {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
-        if (boardState[newMove][5] != 0)
+        if (boardState[newMove][5] != 0 || newMove > 6)
             return false;
 
         for (int j = 0; j<6; j++) {
@@ -80,15 +53,14 @@ public class Game {
         }
 
         return false;   // it shouldn't get to this point but if it does the move didn't work
-
     }
 
-    public boolean nextPlayer() {
+    public boolean nextPlayer() {   // I don't think i need this method anymore
         if (((movesList.length()%2)+1) == 1) {return true;}
         else return false;
     }
 
-    public void printGame() {
+    public void printGame() {   // used for testing to visualise the board state
         System.out.print("\n");
         for (int j = 5; j > -1; j--) {
             for (int i = 0; i < 7; i++) {
@@ -98,28 +70,5 @@ public class Game {
         }
         System.out.print("\n");
     }
-
-
-    /*
-        public void performMoveOld(char newMove) {
-        // updates boardState to contain an additional move
-        // performing a move should also add it to movesList
-
-        if ( movesList.length() < 42 ) {
-            movesList = movesList + newMove;
-
-            int i = Character.getNumericValue(newMove);
-
-            for (int j = 0; j < 6; j++) {
-                if (boardState[i][j] == 0) {
-                    boardState[i][j] = (2 - ((movesList.length()) % 2));
-                    break;
-                }
-            }
-        }
-
-        }
-    */
-
 
 }

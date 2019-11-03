@@ -1,6 +1,4 @@
-package com.ThomasTheStankEngine;
-
-import org.jetbrains.annotations.NotNull;
+//package com.ThomasTheStankEngine;
 
 public class Node {
 
@@ -46,8 +44,7 @@ public class Node {
             for (int i = 0; i<7; i++) {
                 children[i] = new Node();
                 children[i].getData().setMovesList(data.getMovesList());
-                Node.copyData(data,children[i].getData());
-                //System.arraycopy(data.getBoardState(),0,children[i].getData().getBoardState(),0,42);
+                Node.copyData(data,children[i].getData());  // avoids all nodes pointing to same memory address
                 if (children[i].getData().performMove(i))
                     children[i].buildTree(depth - 1);
                 else children[i] = null;
@@ -55,7 +52,7 @@ public class Node {
         }
     }
 
-    private static void copyData(@NotNull Game src, Game dst) {   //copies src into dst
+    private static void copyData(Game src, Game dst) {   //copies src into dst
         dst.setMovesList(src.getMovesList());
         int[][] tempBoard = new int[7][6];
         for ( int i = 0; i < 7; i++) {
@@ -71,7 +68,8 @@ public class Node {
         if ( this != null ) {
             count++;
             for (int i = 0; i<7; i++) {
-                count += children[i].visitTree();
+                if (children[i] != null)
+                    count += children[i].visitTree();
             }
         }
         return count;

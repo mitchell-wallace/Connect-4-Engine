@@ -4,19 +4,19 @@
 
  */
 
-package com.ThomasTheStankEngine;
+//package com.ThomasTheStankEngine;
 
 public class Minimax {
 
 
     private static int minimax(Node node, int depth, boolean maximisingPlayer) {
         if (depth == 0) {
-            Evaluator.resetScore();
+            Evaluator.resetScore();     // redundant but I wanted to be sure it happened
             return Evaluator.evaluate(node.getData());
         }
 
         if (maximisingPlayer) {
-            // set the current evaluation to be as small as possible if we wish tomaximise it
+            // set the current evaluation to be as small as possible if we wish to maximise it
             int value = Integer.MIN_VALUE;
                 for (int i = 0; i < node.getChildren().length; i++) {
                     // if we can do better, then set value to the better evaluation
@@ -26,7 +26,7 @@ public class Minimax {
 
             return value;
         } else { // we are trying to minimise
-            // set the current evaluation to be as large as possible if we wish tominimise it
+            // set the current evaluation to be as large as possible if we wish to minimise it
             int value = Integer.MAX_VALUE;
                 for (int i = 0; i < node.getChildren().length; i++) {
                     if (node.getChild(i) != null)
@@ -40,12 +40,14 @@ public class Minimax {
     public static int[] minimaxStart(Node node, int depth, boolean maximisingPlayer) {
 
         if (node.getData().getMovesList().equals("")) {
-            int[] out = {3, 1};
-            return out;
+            int[] out = {3, 70};
+            return out;     // The first move should always be in the centre, no need to do any more
+                            // processing to determine that
         }
         else {
-            depth -= 1;
-            node.buildTree(depth+1);
+            depth -= 1;     // The algorithm practically looks depth+1 moves ahead
+                            // This way, if depth = 4, the possible boardstates after 4 more moves will be evaluated
+            node.buildTree(depth+1);    // depth+1 is required for the corresponding tree.
 
             int bestIndex = 0;
             int bestValue = 0;
@@ -55,7 +57,7 @@ public class Minimax {
                 for (int i = 0; i < node.getChildren().length; i++) {
                     if (node.getChild(i) != null) {
                         int tmpValue = minimax(node.getChild(i), depth, false);
-                        if (tmpValue > bestValue) { // we’re trying to maximise, so if we get abigger value, update
+                        if (tmpValue > bestValue) { // we’re trying to maximise, so if we get a bigger value, update
                             bestValue = tmpValue;
                             bestIndex = i;
                         }
@@ -66,7 +68,7 @@ public class Minimax {
                 for (int i = 0; i < node.getChildren().length; i++) {
                     if (node.getChild(i) != null) {
                         int tmpValue = minimax(node.getChild(i), depth, true);
-                        if (tmpValue < bestValue) { // we’re trying to minimise, so if we get asmaller value, update
+                        if (tmpValue < bestValue) { // we’re trying to minimise, so if we get a smaller value, update
                             bestValue = tmpValue;
                             bestIndex = i;
                         }
@@ -74,7 +76,7 @@ public class Minimax {
                 }
             }
 
-            int[] out = {bestIndex, bestValue};
+            int[] out = {bestIndex, bestValue};     // output the two values needed by the interface
             return out;
         }
     }

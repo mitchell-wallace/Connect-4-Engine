@@ -1,27 +1,19 @@
-package com.ThomasTheStankEngine;
+//package com.ThomasTheStankEngine;         // package was required for running in IntelliJ
 import java.util.Scanner;
 import java.io.*;
 
 public class Interface {
 
     public static void main(String[] args) {
-        //System.out.println("This is a test;");
 
         // game loop setup
         boolean running = true;
         Scanner sc = new Scanner(System.in);
-        //InputStreamReader isr=new InputStreamReader(System.in);
-        //BufferedReader br=new BufferedReader(isr);
         Node thisNode = new Node();
 
         // game loop
         while (running) {
-            //System.out.println("waiting for input");
             String cinput = sc.nextLine();
-            //try {
-                //String cinput = br.readLine();
-
-            //System.out.println(cinput);
 
             if (cinput.contains("quit")) {
                 System.out.println("quitting");
@@ -30,7 +22,10 @@ public class Interface {
 
             else if (cinput.contains("go")) {
 
-                // below is to determine times. I don't know what to do with this information yet.
+                // the block below is to determine times. My engine runs well enough in short enough time
+                // that I don't think it needs to adjust for time.
+                // or at least, on my i5-6600k @ 4GHz at home it responds with no perceptible delay
+                // at a default depth of 4
                 /*
                 int[] times = new int[2];
                 int i = 9;
@@ -39,19 +34,18 @@ public class Interface {
                 times[1] = Integer.parseInt(cinput.substring(i+7)); // we know how far after the end of x the start if y is
                 */
 
-
+                // depth 4 is sufficient for the engine to be able to beat me,
+                // and performs fast enough that I won't need to adapt anything to account for time consumption
                 int[] thisMove = Minimax.minimaxStart(thisNode,4,thisNode.getData().nextPlayer());
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }
 
             else if (cinput.contains("name")) {
-                System.out.println("enginename-c3293398");
+                System.out.println("ThomasTheStankEngine-c3293398");
             }
 
             else if (cinput.contains("isready")) {
-
-                //thisNode.buildTree(6);
                 System.out.println("readyok");
             }
 
@@ -63,7 +57,7 @@ public class Interface {
             }
 
             else if (cinput.contains("perft")) {
-                if (cinput.length() > 5) {
+                if (cinput.length() > 6) {
                     int x = Integer.parseInt(cinput.substring(6));
                     int[] thisPerft = thisNode.perft(x);
 
@@ -75,11 +69,11 @@ public class Interface {
                 System.out.println("No info output has been configured for this engine.\n");
             }
 
-            else if (cinput.contains("prt")) {
+            else if (cinput.contains("prt")) {      // used for testing to visualise the game board
                 thisNode.getData().printGame();
             }
 
-            else if (cinput.contains("mv")) {
+            else if (cinput.contains("mv")) {       // used for testing to play against the engine or play it against itself
                 if (cinput.length()<4) {System.out.println("u r dumdum");}
                 else {
                     thisNode.getData().performMove(Character.getNumericValue(cinput.charAt(3)));
@@ -87,9 +81,7 @@ public class Interface {
                 }
             }
 
-            else {System.out.println("no input received");}
-
-            //} catch (IOException e) {System.out.println("An error occurred");}
+            //else {System.out.println("no input received");}
         }
     }
 }
