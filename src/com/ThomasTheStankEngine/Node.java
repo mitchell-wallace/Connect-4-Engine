@@ -48,8 +48,9 @@ public class Node {
                 children[i].getData().setMovesList(data.getMovesList());
                 Node.copyData(data,children[i].getData());
                 //System.arraycopy(data.getBoardState(),0,children[i].getData().getBoardState(),0,42);
-                children[i].getData().performMove(i);
-                children[i].buildTree(depth - 1);
+                if (children[i].getData().performMove(i))
+                    children[i].buildTree(depth - 1);
+                else children[i] = null;
             }
         }
     }

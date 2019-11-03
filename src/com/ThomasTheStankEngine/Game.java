@@ -64,18 +64,22 @@ public class Game {
         }
     }
 
-    public void performMove(int newMove) {
+    public boolean performMove(int newMove) {
         // updates boardState to contain an additional move
         // performing a move should also add it to movesList
 
-        movesList = movesList + newMove;
+        if (boardState[newMove][5] != 0)
+            return false;
 
         for (int j = 0; j<6; j++) {
             if (boardState[newMove][j] == 0) {
-                boardState[newMove][j] = (2-((movesList.length())%2));
-                break;
+                boardState[newMove][j] = (((movesList.length())%2)+1);
+                movesList = movesList + newMove;
+                return true;
             }
         }
+
+        return false;   // it shouldn't get to this point but if it does the move didn't work
 
     }
 
