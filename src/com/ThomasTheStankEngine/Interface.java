@@ -1,3 +1,14 @@
+/*
+    Part of the ThomasTheStankEngine connect-4 engine.
+
+    Written by:     Mitchell wallace
+    Student number: c3293398
+    Subject:        COMP2230
+    Last modified:  03-11-2019
+    Description:    Game loop and communication process with coordinator.jar
+
+*/
+
 //package com.ThomasTheStankEngine;         // package was required for running in IntelliJ
 import java.util.Scanner;
 import java.io.*;

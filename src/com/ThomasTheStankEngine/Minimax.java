@@ -1,8 +1,14 @@
 /*
-    
+    Part of the ThomasTheStankEngine connect-4 engine.
 
+    Written by:     Mitchell wallace
+    Student number: c3293398
+    Subject:        COMP2230
+    Last modified:  03-11-2019
+    Description:    Implementation of the minimax algorithm. Evaluation function is specified in the
+                    Evaluator class. Tree structure is specified in the Node class.
 
- */
+*/
 
 //package com.ThomasTheStankEngine;
 

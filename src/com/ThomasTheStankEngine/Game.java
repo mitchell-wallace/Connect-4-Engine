@@ -1,3 +1,16 @@
+/*
+    Part of the ThomasTheStankEngine connect-4 engine.
+
+    Written by:     Mitchell wallace
+    Student number: c3293398
+    Subject:        COMP2230
+    Last modified:  03-11-2019
+    Description:    This class stores the state of the game, both as a two-dimensional array, and
+                    as a string containing only the sent of moves. It also contains methods for
+                    updating and displaying the game state.
+
+*/
+
 //package com.ThomasTheStankEngine;
 
 public class Game {
@@ -7,7 +20,7 @@ public class Game {
         movesList = "";
     }
 
-    private int[][] boardState;     // 0 means empty, 1 means odd player, 2 means evens player
+    private int[][] boardState;     // 0 means empty, 1 means player 1, 2 means player 2
     private String movesList;
 
     public int[][] getBoardState() { return boardState; }
@@ -29,6 +42,7 @@ public class Game {
 
         // It should basically just work out to initialising the game and running
         // performMove for each character in moves
+        // Resetting is perhaps not the most efficient approach but it's good enough
 
         movesList="";
         initialiseBoard();

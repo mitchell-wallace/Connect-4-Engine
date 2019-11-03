@@ -1,3 +1,15 @@
+/*
+    Part of the ThomasTheStankEngine connect-4 engine.
+
+    Written by:     Mitchell wallace
+    Student number: c3293398
+    Subject:        COMP2230
+    Last modified:  03-11-2019
+    Description:    Contains the evaluation function for the minimax algorithm, as well as
+                    a small number of helper methods. This went through multiple iterations.
+
+*/
+
 //package com.ThomasTheStankEngine;
 
 public class Evaluator {
