@@ -90,4 +90,12 @@ Things to fix:
     
     We also need to assign value to /playable/ and open cells - but one thing at a time.
         Ok it seems to be otherwise working (!!!!) so yeah we can get to this now
-        
+
+    
+
+
+
+
+    
+
+    10 marks for a clear report. A description of the evaluation function should be included in the report.

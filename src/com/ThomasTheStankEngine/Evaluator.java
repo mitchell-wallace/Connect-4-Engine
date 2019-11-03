@@ -5,7 +5,7 @@
     Student number: c3293398
     Subject:        COMP2230
     Last modified:  03-11-2019
-    Description:    Contains the evaluation function for the minimax algorithm, as well as
+    Description:    Contains the evaluation function for use in the minimax algorithm, as well as
                     a small number of helper methods. This went through multiple iterations.
 
 */

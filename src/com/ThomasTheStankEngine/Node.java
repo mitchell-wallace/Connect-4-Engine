@@ -24,8 +24,14 @@ public class Node {
         children = new Node[7];
     }
 
+    Node(boolean b) {
+        data = null;
+        children = new Node[7];
+    }
+
     private Game data;
     private Node[] children;
+    private static int perftCount = 0;
 
     public Game getData() {return data;}
     public Node getChild(int i) {return children[i];}
@@ -88,9 +94,26 @@ public class Node {
     }
 
     public int[] perft(int depth) {
-        buildTree(depth);
-        int[] out = {depth,this.visitTree()};
+        Node root = new Node();
+        perftCount = 0;
+        root.perftIterate(depth);
+
+        int[] out = {depth, perftCount};
         return out;
+    }
+
+    private void perftIterate(int depth) {
+        if (depth == 0) {
+            perftCount++;
+        }
+        else {
+            perftCount++;
+            for (int i = 0; i < 7; i++) {
+                Node.copyData(this.getData(),this.children[i].getData());
+                if (this.children[i].getData().performMove(i))
+                    this.perftIterate(depth-1);
+            }
+        }
     }
 
 
