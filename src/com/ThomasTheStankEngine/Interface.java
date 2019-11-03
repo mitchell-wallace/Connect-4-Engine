@@ -40,7 +40,7 @@ public class Interface {
                 */
 
 
-                int[] thisMove = Minimax.minimaxStart(thisNode,7,thisNode.getData().nextPlayer());
+                int[] thisMove = Minimax.minimaxStart(thisNode,4,thisNode.getData().nextPlayer());
 
                 System.out.println("bestmove " + thisMove[0] + " " + thisMove[1]);
             }

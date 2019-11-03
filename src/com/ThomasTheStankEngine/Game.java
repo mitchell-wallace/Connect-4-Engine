@@ -84,7 +84,7 @@ public class Game {
     }
 
     public boolean nextPlayer() {
-        if (2-((movesList.length())%2) == 1) {return true;}
+        if (((movesList.length()%2)+1) == 1) {return true;}
         else return false;
     }
 

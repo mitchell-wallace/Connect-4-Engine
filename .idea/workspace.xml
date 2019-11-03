@@ -6,8 +6,6 @@
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/to-do.txt" beforeDir="false" afterPath="$PROJECT_DIR$/to-do.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -37,11 +35,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-                  <folding>
-                    <element signature="e#346#4925#1" />
-                  </folding>
+                <state relative-caret-position="459">
+                  <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
                 </state>
               </provider>
             </entry>
@@ -49,8 +44,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="497">
-                  <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+                <state relative-caret-position="1479">
+                  <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -58,7 +53,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="588">
+                <state relative-caret-position="595">
                   <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
                   <folding>
                     <element signature="method#setChildren#0;class#Node#0" />
@@ -70,8 +65,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="646">
-                  <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="61" selection-end-column="21" />
+                <state relative-caret-position="579">
+                  <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
                 </state>
               </provider>
             </entry>
@@ -79,8 +74,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="392">
-                  <caret line="48" column="58" lean-forward="true" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+                <state relative-caret-position="290">
+                  <caret line="42" selection-start-line="42" selection-end-line="42" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -125,8 +120,8 @@
         <option value="$PROJECT_DIR$/src/com/company/Interface.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Main.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java" />
-        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java" />
+        <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java" />
         <option value="$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java" />
       </list>
@@ -349,7 +344,14 @@
       <option name="project" value="LOCAL" />
       <updated>1572608471873</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="sanity no longer required">
+      <created>1572749213546</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1572749213546</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -374,8 +376,8 @@
       <window_info id="Favorites" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.23201856" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.2892498" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23201856" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.2892498" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32946634" />
@@ -436,113 +438,12 @@
     <MESSAGE value="searching for sanity, and i'm at the end of my skipping rope" />
     <MESSAGE value="removed the skipping rope because i was about to hang by it" />
     <MESSAGE value="maybe on sunday i can wrangle more than 30% out of this damned assignment" />
-    <option name="LAST_COMMIT_MESSAGE" value="maybe on sunday i can wrangle more than 30% out of this damned assignment" />
+    <MESSAGE value="sanity no longer required" />
+    <option name="LAST_COMMIT_MESSAGE" value="sanity no longer required" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java</url>
-          <line>53</line>
-          <properties />
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java</url>
-          <line>59</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java</url>
-          <line>61</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java</url>
-          <line>23</line>
-          <properties />
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java</url>
-          <line>32</line>
-          <properties />
-          <option name="timeStamp" value="53" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="54" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>82</line>
-          <properties />
-          <option name="timeStamp" value="55" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>89</line>
-          <properties />
-          <option name="timeStamp" value="56" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>96</line>
-          <properties />
-          <option name="timeStamp" value="57" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>117</line>
-          <properties />
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>124</line>
-          <properties />
-          <option name="timeStamp" value="59" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>131</line>
-          <properties />
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>177</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>181</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>99</line>
-          <properties />
-          <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>98</line>
-          <properties />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>67</line>
-          <properties />
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java</url>
           <line>55</line>
@@ -550,14 +451,6 @@
             <option name="EMULATED" value="true" />
           </properties>
           <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java</url>
-          <line>200</line>
-          <properties class="com.ThomasTheStankEngine.Evaluator" method="scoreCell">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="65" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -577,17 +470,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="595">
+          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
+          <folding>
+            <element signature="method#setChildren#0;class#Node#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="497">
-          <caret line="68" column="60" lean-forward="true" selection-start-line="68" selection-start-column="60" selection-end-line="68" selection-end-column="60" />
+        <state relative-caret-position="1479">
+          <caret line="87" column="26" lean-forward="true" selection-start-line="87" selection-start-column="26" selection-end-line="87" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="48" column="58" lean-forward="true" selection-start-line="48" selection-start-column="58" selection-end-line="48" selection-end-column="58" />
+        <state relative-caret-position="290">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -596,28 +499,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Evaluator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="41" lean-forward="true" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-          <folding>
-            <element signature="e#346#4925#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Node.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="52" column="40" selection-start-line="52" selection-start-column="40" selection-end-line="52" selection-end-column="40" />
-          <folding>
-            <element signature="method#setChildren#0;class#Node#0" />
-          </folding>
+        <state relative-caret-position="459">
+          <caret line="75" column="21" lean-forward="true" selection-start-line="75" selection-start-column="21" selection-end-line="75" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/ThomasTheStankEngine/Minimax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="60" column="25" lean-forward="true" selection-start-line="60" selection-start-column="25" selection-end-line="61" selection-end-column="21" />
+        <state relative-caret-position="579">
+          <caret line="64" column="46" lean-forward="true" selection-start-line="64" selection-start-column="46" selection-end-line="64" selection-end-column="46" />
         </state>
       </provider>
     </entry>

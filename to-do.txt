@@ -85,4 +85,5 @@ Things to fix:
         It's only if a column is already full that minimax has issues.
         >>It was a problem in minimaxStart. Should no longer have any null pointer exceptions from minimax.
 
-    
+    Evaluation function should forget the currentPlayer bullcrap. We don't care.
+        checkCell and scoreCell should be positive if it's good for player 1, negative if it's good for player 2
